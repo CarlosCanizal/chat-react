@@ -1,11 +1,13 @@
 let theme = localStorage.getItem('theme')?localStorage.getItem('theme'):'light';
 let clockDisplay = localStorage.getItem('clockDisplay')?localStorage.getItem('clockDisplay'):'12-hours';
 let language = localStorage.getItem('language')?localStorage.getItem('language'):'en';
+let sendOption = localStorage.getItem('sendOption')?localStorage.getItem('sendOption'):'off';
 
 const initialState = {
     theme : theme,
     clockDisplay: clockDisplay,
-    language: language
+    language: language,
+    sendOption: sendOption
 }
 
 const reducer = (state=initialState, action)=>{
@@ -28,6 +30,13 @@ const reducer = (state=initialState, action)=>{
         return {
             ...state,
             language: action.language
+        }
+    }
+    else if (action.type === 'CHANGE_SEND_OPTION'){
+        localStorage.setItem('sendOption',action.sendOption);
+        return {
+            ...state,
+            sendOption: action.sendOption
         }
     }
     return state

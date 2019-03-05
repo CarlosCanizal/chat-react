@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import ThemeSelector from '../ThemeSelector/ThemeSelector';
 import ClockSelector from '../ClockSelector/ClockSelector';
 import LanguageSelector from '../LanguageSelector/LanguageSelector';
+import SendSettings from '../SendSettings/SendSettings';
 
 class Settings extends Component {
   render() {
@@ -15,6 +16,7 @@ class Settings extends Component {
               <ThemeSelector />
               <ClockSelector />
               <LanguageSelector />
+              <SendSettings />
             </BodyApp>
             <Footer>
             </Footer>
