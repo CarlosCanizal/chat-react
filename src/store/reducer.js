@@ -5,7 +5,6 @@ const initialState = {
 
 const reducer = (state=initialState, action)=>{
     if (action.type === 'CHANGE_THEME'){
-        console.log(action.theme);
         localStorage.setItem('theme',action.theme);
         return {
             ...state,

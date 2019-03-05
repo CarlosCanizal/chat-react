@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
-import Header from '../Header/Header';
 import BodyApp from '../BodyApp/BodyApp';
 import Footer from '../Footer/Footer';
+import { connect } from 'react-redux';
+import ThemeSelector from '../ThemeSelector/ThemeSelector';
 
 class Settings extends Component {
   render() {
+
     return (
         <div>
-            <Header />
-            <BodyApp />
+            <BodyApp>
+              <ThemeSelector />
+            </BodyApp>
             <Footer>
             </Footer>
         </div>
@@ -16,4 +19,4 @@ class Settings extends Component {
   }
 }
 
-export default Settings;
+export default connect()(Settings);
