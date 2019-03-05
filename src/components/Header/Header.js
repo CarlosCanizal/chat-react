@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Header.module.sass';
-
+import { connect } from 'react-redux';
 
 class Header extends Component{
-    state = {
-        theme: 'light'
-    }
+
+    
     render(){
         let themeClass = [styles.Header];
-        themeClass.push(styles[this.state.theme]);
+        themeClass.push(styles[this.props.theme]);
         
         return (
             <header className={themeClass.join(' ')}>
@@ -22,4 +21,10 @@ class Header extends Component{
     }
 }
 
-export default Header;
+const mapStateToProps = state =>{
+    return {
+      theme : state.theme
+    };
+};
+
+export default connect(mapStateToProps)(Header);

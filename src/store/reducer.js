@@ -1,10 +1,12 @@
+let theme = localStorage.getItem('theme')?localStorage.getItem('theme'):'light';
 const initialState = {
-    theme : 'light'
+    theme : theme
 }
 
 const reducer = (state=initialState, action)=>{
     if (action.type === 'CHANGE_THEME'){
         console.log(action.theme);
+        localStorage.setItem('theme',action.theme);
         return {
             ...state,
             theme: action.theme

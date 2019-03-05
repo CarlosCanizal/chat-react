@@ -6,26 +6,26 @@ html, :root
 
 .Header
     padding: 10px 30px
-    position: relative;
-
-.light
-  background: linear-gradient(to right, var(--lightMain), var(--lightAccent));
+    position: relative
   
-.dark
-    background: linear-gradient(to right, var(--darkMain), var(--darkAccent));
+.Header.light 
+  background: linear-gradient(to right, var(--lightMain), var(--lightAccent));
+
+.Header.dark 
+  background: linear-gradient(to right, var(--darkMain), var(--darkAccent));
 
 .Header::after
-  content: "";
-  position: absolute;
-  z-index: -1;
-  bottom: -5px;
-  height: 5px;
-  width: 97%;
-  opacity: 0.5;
-  border-radius: 10px;
-  left: 10px;
-  background: inherit;
-  filter: blur(6px);
+  content: ""
+  position: absolute
+  z-index: -1
+  bottom: -5px
+  height: 5px
+  width: 97%
+  opacity: 0.5
+  border-radius: 10px
+  left: 10px
+  background: inherit
+  filter: blur(6px)
 
 .Header a
     display: inline-block
