@@ -5,6 +5,7 @@ class BodyApp extends Component{
     render(){
         return(
             <div className={styles.BodyApp}>
+                {this.props.children}
             </div>
         )
     }
