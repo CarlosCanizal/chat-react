@@ -1,23 +1,40 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import styles from './ClockSelector.module.sass';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+
+
 
 class ClockSelector extends Component{
 
     render(){
-        const timeFormats = ['12-hours','24-hours'];
-        let hoursFormats = timeFormats.map((clockDisplay, index)=>{
+        const formats = ['12Hours', '24Hours'];
+
+        let clockHandler= (event)=>{
+            this.props.onChangeClock(event.target.value);
+        };
+
+        let timeFormat =  formats.map((format, index)=>{
             return(
-                <div key={index} className={styles.ClockSelector}>
-                    <label>{clockDisplay}</label>
-                    <input name="clockDisplay" type="radio" checked={clockDisplay===this.props.clockDisplay} value={clockDisplay} onChange={()=>this.props.onChangeClock(clockDisplay)} />
-                </div>
+                <FormControlLabel key={index} value={format} control={<Radio />} label={format} />
             )
         });
+
         return(
             <div>
-                <h3>Clock Display</h3>
-                {hoursFormats}
+                <h3>Time Format</h3>
+                <FormControl component="fieldset">
+                    <RadioGroup
+                    aria-label=""
+                    name="clockSelector"
+                    value={this.props.timeFormat}
+                    onChange={clockHandler}
+                    >
+                    {timeFormat}
+                    </RadioGroup>
+                </FormControl>
             </div>
         )
     }
@@ -26,13 +43,13 @@ class ClockSelector extends Component{
 
 const mapStateToProps = state =>{
     return {
-        clockDisplay : state.clockDisplay
+        timeFormat : state.timeFormat
     };
 };
   
 const mapDispatchToProps = dispatch=>{
     return {
-        onChangeClock : (clockDisplay)=> dispatch({type: 'CHANGE_CLOCK', clockDisplay:clockDisplay})
+        onChangeClock : (timeFormat)=> dispatch({type: 'CHANGE_CLOCK', timeFormat:timeFormat})
     };
 };
 

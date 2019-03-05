@@ -18,9 +18,9 @@ class Settings extends Component {
               <ClockSelector />
               <LanguageSelector />
               <SendSettings />
-              <ResetSettings />
             </BodyApp>
             <Footer>
+              <ResetSettings />
             </Footer>
         </div>
     );

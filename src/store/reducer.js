@@ -1,18 +1,18 @@
 const defaultSettings = {
     theme : 'light',
-    clockDisplay: '12-hours',
+    timeFormat: '12Hours',
     language: 'en',
-    ctrlSend : 'off'
+    ctrlSend : false
 
 }
 let theme = localStorage.getItem('theme')?localStorage.getItem('theme'):defaultSettings['theme'];
-let clockDisplay = localStorage.getItem('clockDisplay')?localStorage.getItem('clockDisplay'):defaultSettings['clockDisplay'];
-let language = localStorage.getItem('language')?localStorage.getItem('language'):defaultSettings['en'];
+let timeFormat = localStorage.getItem('timeFormat')?localStorage.getItem('timeFormat'):defaultSettings['timeFormat'];
+let language = localStorage.getItem('language')?localStorage.getItem('language'):defaultSettings['language'];
 let ctrlSend = localStorage.getItem('ctrlSend')?localStorage.getItem('ctrlSend'):defaultSettings['ctrlSend'];
 
 const initialState = {
     theme : theme,
-    clockDisplay: clockDisplay,
+    timeFormat: timeFormat,
     language: language,
     ctrlSend: ctrlSend
 }
@@ -26,10 +26,10 @@ const reducer = (state=initialState, action)=>{
         }
     }
     else if (action.type === 'CHANGE_CLOCK'){
-        localStorage.setItem('clockDisplay',action.clockDisplay);
+        localStorage.setItem('timeFormat',action.timeFormat);
         return {
             ...state,
-            clockDisplay: action.clockDisplay
+            timeFormat: action.timeFormat
         }
     }
     else if (action.type === 'CHANGE_LANGUAGE'){

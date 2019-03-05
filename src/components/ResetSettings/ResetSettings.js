@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Button from '@material-ui/core/Button';
 
 class ResetSettings extends Component{
     render(){
         return(
-            <button onClick={this.props.resetSettings}> Reset Settings</button>
+            <Button size="large" onClick={this.props.resetSettings}>
+                Reset Settings
+            </Button>
         )
     }
 }
