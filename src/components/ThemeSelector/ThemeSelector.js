@@ -9,7 +9,7 @@ class ThemeSelector extends Component{
             return(
                 <div key={index} className={styles.ThemeSelector}>
                     <label>{theme}</label>
-                    <input name="theme" type="radio" defaultChecked={theme===this.props.theme} value={theme} onChange={()=>this.props.onChangeTheme(theme)} />
+                    <input name="theme" type="radio" checked={theme===this.props.theme} value={theme} onChange={()=>this.props.onChangeTheme(theme)} />
                 </div>
             )
         });

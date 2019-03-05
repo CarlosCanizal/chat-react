@@ -6,11 +6,11 @@ class SendSettings extends Component{
 
     render(){
         const options = ['on','off'];
-        let sendOptions = options.map((sendOption, index)=>{
+        let sendOptions = options.map((ctrlSend, index)=>{
             return(
                 <div key={index} className={styles.SendSettings}>
-                    <label>{sendOption}</label>
-                    <input name="sendOption" type="radio" defaultChecked={sendOption===this.props.sendOption} value={sendOption} onChange={()=>this.props.onChangeSendOption(sendOption)} />
+                    <label>{ctrlSend}</label>
+                    <input name="ctrlSend" type="radio" checked={ctrlSend===this.props.ctrlSend} value={ctrlSend} onChange={()=>this.props.onChangeSendOption(ctrlSend)} />
                 </div>
             )
         });
@@ -25,15 +25,16 @@ class SendSettings extends Component{
 
 }
 
+
 const mapStateToProps = state =>{
     return {
-        sendOption : state.sendOption
+        ...state
     };
 };
   
 const mapDispatchToProps = dispatch=>{
     return {
-        onChangeSendOption : (sendOption)=> dispatch({type: 'CHANGE_SEND_OPTION', sendOption:sendOption})
+        onChangeSendOption : (ctrlSend)=> dispatch({type: 'CHANGE_CTRL_SEND', ctrlSend:ctrlSend})
     };
 };
 

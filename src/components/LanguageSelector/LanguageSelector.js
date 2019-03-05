@@ -8,7 +8,7 @@ class LanguageSelector extends Component{
         const languagesList = ['en','es'];
         let options = languagesList.map((language, index)=>{
             return(
-                <option selected={language === this.props.language} key={index} value={language}>{language}</option>
+                <option key={index} value={language}>{language}</option>
             )
         });
 
@@ -18,7 +18,7 @@ class LanguageSelector extends Component{
         return(
             <div>
                 <h3>Language</h3>
-                <select onChange={languageHandler}>
+                <select onChange={languageHandler} value={this.props.language}>
                     {options}
                 </select>
             </div>

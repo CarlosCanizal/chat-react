@@ -10,7 +10,7 @@ class ClockSelector extends Component{
             return(
                 <div key={index} className={styles.ClockSelector}>
                     <label>{clockDisplay}</label>
-                    <input name="clockDisplay" type="radio" defaultChecked={clockDisplay===this.props.clockDisplay} value={clockDisplay} onChange={()=>this.props.onChangeClock(clockDisplay)} />
+                    <input name="clockDisplay" type="radio" checked={clockDisplay===this.props.clockDisplay} value={clockDisplay} onChange={()=>this.props.onChangeClock(clockDisplay)} />
                 </div>
             )
         });

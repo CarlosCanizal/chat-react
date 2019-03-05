@@ -23,7 +23,7 @@ class Header extends Component{
 
 const mapStateToProps = state =>{
     return {
-      theme : state.theme
+        theme : state.theme
     };
 };
 
