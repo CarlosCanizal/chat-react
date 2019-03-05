@@ -1,18 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import styles from './ThemeSelector.module.sass';
 
 class ThemeSelector extends Component{
     render(){
         const themeList = ['light', 'dark'];
         let themes = themeList.map((theme, index)=>{
             return(
-                <div key={index}>
+                <div key={index} className={styles.ThemeSelector}>
                     <label>{theme}</label>
                     <input name="theme" type="radio" defaultChecked={theme===this.props.theme} value={theme} onChange={()=>this.props.onChangeTheme(theme)} />
                 </div>
             )
         });
-        return themes
+        return (
+            <div>
+                <h3>Interface Color</h3>
+                {themes}
+            </div>
+        )
     }
 }
 

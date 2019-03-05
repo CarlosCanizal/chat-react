@@ -4,6 +4,7 @@ import Footer from '../Footer/Footer';
 import { connect } from 'react-redux';
 import ThemeSelector from '../ThemeSelector/ThemeSelector';
 
+
 class Settings extends Component {
   render() {
 
