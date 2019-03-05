@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
 import BodyApp from '../BodyApp/BodyApp';
+import Footer from '../Footer/Footer'
 
 class Chat extends Component {
   render() {
@@ -8,6 +9,7 @@ class Chat extends Component {
         <div>
             <Header />
             <BodyApp />
+            <Footer />
         </div>
     );
   }
