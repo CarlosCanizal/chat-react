@@ -3,7 +3,7 @@ import BodyApp from '../BodyApp/BodyApp';
 import Footer from '../Footer/Footer';
 import { connect } from 'react-redux';
 import ThemeSelector from '../ThemeSelector/ThemeSelector';
-
+import ClockSelector from '../ClockSelector/ClockSelector';
 
 class Settings extends Component {
   render() {
@@ -12,6 +12,7 @@ class Settings extends Component {
         <div>
             <BodyApp>
               <ThemeSelector />
+              <ClockSelector />
             </BodyApp>
             <Footer>
             </Footer>

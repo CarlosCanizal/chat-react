@@ -24,14 +24,14 @@ class ThemeSelector extends Component{
 
 const mapStateToProps = state =>{
     return {
-      theme : state.theme
+        theme : state.theme
     };
-  };
+};
   
-  const mapDispatchToProps = dispatch=>{
+const mapDispatchToProps = dispatch=>{
     return {
-      onChangeTheme : (theme)=> dispatch({type: 'CHANGE_THEME', theme:theme})
+        onChangeTheme : (theme)=> dispatch({type: 'CHANGE_THEME', theme:theme})
     };
-  };
+};
   
 export default connect(mapStateToProps,mapDispatchToProps)(ThemeSelector);

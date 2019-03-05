@@ -1,6 +1,8 @@
 let theme = localStorage.getItem('theme')?localStorage.getItem('theme'):'light';
+let clockDisplay = localStorage.getItem('clockDisplay')?localStorage.getItem('clockDisplay'):'12-hours';
 const initialState = {
-    theme : theme
+    theme : theme,
+    clockDisplay: clockDisplay
 }
 
 const reducer = (state=initialState, action)=>{
@@ -9,6 +11,13 @@ const reducer = (state=initialState, action)=>{
         return {
             ...state,
             theme: action.theme
+        }
+    }
+    else if (action.type === 'CHANGE_CLOCK'){
+        localStorage.setItem('clockDisplay',action.clockDisplay);
+        return {
+            ...state,
+            clockDisplay: action.clockDisplay
         }
     }
     return state
