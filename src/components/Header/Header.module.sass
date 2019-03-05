@@ -1,20 +1,26 @@
 html, :root
   --lightMain: #00d2ff
   --lightAccent: #928DAB
-  --lightEnd: #FFF
+  --darkMain: #bdc3c7
+  --darkAccent: #2c3e50
 
 .Header
     padding: 10px 30px
-    background: linear-gradient(to right, var(--lightMain), var(--lightAccent));
     position: relative;
+
+.light
+  background: linear-gradient(to right, var(--lightMain), var(--lightAccent));
+  
+.dark
+    background: linear-gradient(to right, var(--darkMain), var(--darkAccent));
 
 .Header::after
   content: "";
   position: absolute;
   z-index: -1;
-  bottom: -10px;
+  bottom: -5px;
   height: 5px;
-  width: 100%;
+  width: 97%;
   opacity: 0.5;
   border-radius: 10px;
   left: 10px;

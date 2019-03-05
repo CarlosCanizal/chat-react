@@ -4,9 +4,15 @@ import styles from './Header.module.sass';
 
 
 class Header extends Component{
+    state = {
+        theme: 'light'
+    }
     render(){
+        let themeClass = [styles.Header];
+        themeClass.push(styles[this.state.theme]);
+        
         return (
-            <header className={styles.Header}>
+            <header className={themeClass.join(' ')}>
                 <nav>
                     <NavLink to="/" exact>Home</NavLink>
                     <NavLink to="/settings" exact>Settings</NavLink>
