@@ -1,0 +1,29 @@
+html, :root
+  --lightMain: #00d2ff
+  --lightAccent: #928DAB
+  --lightEnd: #FFF
+
+.Header
+    padding: 10px 30px
+    background: linear-gradient(to right, var(--lightMain), var(--lightAccent));
+    position: relative;
+
+.Header::after
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: -10px;
+  height: 10px;
+  width: 100%;
+  opacity: 0.5;
+  border-radius: 10px;
+  left: 10px;
+  
+  background: inherit;
+  filter: blur(6px);
+
+.Header a
+    display: inline-block
+    padding: 15px 10px
+    color: #fff;
+    

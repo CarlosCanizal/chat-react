@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import Header from '../Header/Header';
 
 
 class Settings extends Component {
   render() {
     return (
-      <h1>Settings</h1>
+        <div>
+            <Header />
+            <h1>Settings</h1>
+        </div>
     );
   }
 }

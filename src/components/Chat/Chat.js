@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import Header from '../Header/Header';
 
 
 class Chat extends Component {
   render() {
     return (
-        <h1>Chat</h1>
+        <div>
+            <Header />
+            <h1>Home</h1>
+        </div>
     );
   }
 }
