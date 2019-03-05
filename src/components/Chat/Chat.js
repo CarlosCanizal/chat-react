@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
-
+import BodyApp from '../BodyApp/BodyApp';
 
 class Chat extends Component {
   render() {
     return (
         <div>
             <Header />
-            <h1>Home</h1>
+            <BodyApp />
         </div>
     );
   }
