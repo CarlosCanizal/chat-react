@@ -4,6 +4,7 @@ import Footer from '../Footer/Footer';
 import { connect } from 'react-redux';
 import ThemeSelector from '../ThemeSelector/ThemeSelector';
 import ClockSelector from '../ClockSelector/ClockSelector';
+import LanguageSelector from '../LanguageSelector/LanguageSelector';
 
 class Settings extends Component {
   render() {
@@ -13,6 +14,7 @@ class Settings extends Component {
             <BodyApp>
               <ThemeSelector />
               <ClockSelector />
+              <LanguageSelector />
             </BodyApp>
             <Footer>
             </Footer>
