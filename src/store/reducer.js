@@ -2,19 +2,22 @@ const defaultSettings = {
     theme : 'light',
     timeFormat: '12Hours',
     language: 'en',
-    ctrlSend : false
+    ctrlSend : false,
+    username : 'guest'
 
 }
 let theme = localStorage.getItem('theme')?localStorage.getItem('theme'):defaultSettings['theme'];
 let timeFormat = localStorage.getItem('timeFormat')?localStorage.getItem('timeFormat'):defaultSettings['timeFormat'];
 let language = localStorage.getItem('language')?localStorage.getItem('language'):defaultSettings['language'];
 let ctrlSend = localStorage.getItem('ctrlSend')?localStorage.getItem('ctrlSend'):defaultSettings['ctrlSend'];
+let username = localStorage.getItem('username')?localStorage.getItem('username'):defaultSettings['username'];
 
 const initialState = {
     theme : theme,
     timeFormat: timeFormat,
     language: language,
-    ctrlSend: ctrlSend
+    ctrlSend: ctrlSend,
+    username: username
 }
 
 const reducer = (state=initialState, action)=>{
@@ -50,6 +53,13 @@ const reducer = (state=initialState, action)=>{
         localStorage.clear();
         return {
             ...defaultSettings
+        }
+    }
+    else if (action.type === 'CHANGE_USERNAME'){
+        localStorage.setItem('username',action.username);
+        return {
+            ...state,
+            username: action.username
         }
     }
     return state

@@ -7,6 +7,7 @@ import ClockSelector from '../ClockSelector/ClockSelector';
 import LanguageSelector from '../LanguageSelector/LanguageSelector';
 import SendSettings from '../SendSettings/SendSettings';
 import ResetSettings from '../ResetSettings/ResetSettings'
+import Username from '../Username/Username'
 
 class Settings extends Component {
   render() {
@@ -14,6 +15,7 @@ class Settings extends Component {
     return (
         <div>
             <BodyApp>
+              <Username />
               <ThemeSelector />
               <ClockSelector />
               <LanguageSelector />
