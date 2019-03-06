@@ -11,9 +11,12 @@ class Header extends Component{
         let themeClass = [styles.Header];
         themeClass.push(styles[this.props.theme]);
         
-        let notifications=(
-            <Notification counter="10"/>
-        )
+        let notifications = "";
+        if(this.props.notifications > 0){
+            notifications=(
+                <Notification counter={this.props.notifications}/>
+            )
+        }
 
         return (
             <header className={themeClass.join(' ')}>
