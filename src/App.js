@@ -3,14 +3,18 @@ import {BrowserRouter} from 'react-router-dom';
 import Theme from './components/Theme/Theme';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
-import './App.sass';
+import { connect } from 'react-redux';
+import styles from './App.module.sass';
 
 library.add(faPaperPlane)
 class App extends Component {
   render() {
+    let themeClass = [styles.App];
+    themeClass.push(styles[this.props.theme]);
+    
     return (
       <BrowserRouter>
-        <div className="App">
+        <div className={themeClass.join(' ')}>
           <Theme></Theme>
         </div>
       </BrowserRouter>
@@ -18,4 +22,9 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state =>{
+  return {
+      ...state
+  };
+};
+export default connect(mapStateToProps)(App);
