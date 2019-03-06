@@ -14,7 +14,7 @@ class Bubble extends Component{
 
         return(
             <div className={classNames.join(" ")}>
-                <div className={styles.username}>{this.props.username}:</div>
+                <div className={styles.username}>{this.props.message.username}:</div>
                 <div className={styles.message}>{this.props.message.message}</div>
                 <div className={styles.time}>
                     {time}

@@ -4,6 +4,7 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
+import styles from './ThemeSelector.module.sass'
 
 class ThemeSelector extends Component{
     render(){
@@ -18,9 +19,10 @@ class ThemeSelector extends Component{
         };
         return (
             <div>
-                <h3>Select Your Theme</h3>
+                <h3 className={styles.Title}>Select Your Theme</h3>
                 <FormControl component="fieldset">
                     <RadioGroup
+                    className={styles.RadioGroup}
                     aria-label=""
                     name="themeSelector"
                     value={this.props.theme}

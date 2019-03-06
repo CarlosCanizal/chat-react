@@ -13,12 +13,12 @@ class Username extends Component{
             <TextField
                 id="outlined-full-width"
                 label="Username"
-                style={{ margin: 8 }}
+                style={{ 'margin-top': 20 }}
                 placeholder="Choose your nickname"
                 helperText="This is the name will appear in the chat"
                 fullWidth
                 defaultValue={this.props.username}
-                margin="normal"
+                margin="none"
                 variant="outlined"
                 onChange={changeNameHandler}
                 InputLabelProps={{

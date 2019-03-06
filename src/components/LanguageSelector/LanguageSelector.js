@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import styles from './LanguageSelector.module.sass'
 
 class LanguageSelector extends Component{
 
@@ -19,9 +20,9 @@ class LanguageSelector extends Component{
         }
         return(
             <div>
-                <h3>Language</h3>
+                <h3 className={styles.Title}>Language</h3>
                 <FormControl component="fieldset">
-                <Select
+                <Select className={styles.SelectMedium}
                     value={this.props.language}
                     onChange={languageHandler}
                 >

@@ -13,6 +13,7 @@ class Chat extends Component {
   componentDidMount(){
     let socket = io('localhost:8080');
     socket.on('RECEIVE_MESSAGE', (data)=>{
+      console.log(data)
       let messages = [...this.state.messages];
       messages.push(data)
       this.setState({messages:messages});

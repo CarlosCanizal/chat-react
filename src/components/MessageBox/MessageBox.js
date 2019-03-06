@@ -27,7 +27,7 @@ class MessageBox extends Component{
             let hours12 = hour12+":"+minutes+":"+seconds+" "+timeLabel;
             
                 this.socket.emit('SEND_MESSAGE', {
-                author: this.props.username,
+                username: this.props.username,
                 message: this.state.message,
                 hours12: hours12,
                 hours24: hours24,

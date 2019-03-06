@@ -8,6 +8,7 @@ import LanguageSelector from '../LanguageSelector/LanguageSelector';
 import SendSettings from '../SendSettings/SendSettings';
 import ResetSettings from '../ResetSettings/ResetSettings'
 import Username from '../Username/Username'
+import styles from './Settings.module.sass'
 
 class Settings extends Component {
   render() {
@@ -16,10 +17,12 @@ class Settings extends Component {
         <div>
             <BodyApp>
               <Username />
-              <ThemeSelector />
-              <ClockSelector />
-              <LanguageSelector />
-              <SendSettings />
+              <div className={styles.SettingsBox}>
+                <ThemeSelector />
+                <ClockSelector />
+                <LanguageSelector />
+                <SendSettings />
+              </div>
             </BodyApp>
             <Footer>
               <ResetSettings />

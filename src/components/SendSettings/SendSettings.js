@@ -4,6 +4,7 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
+import styles from './SendSettings.module.sass'
 
 class SendSettings extends Component{
 
@@ -20,7 +21,7 @@ class SendSettings extends Component{
         });
         return(
             <div>
-                <h3>Send on CTRL+ENTER</h3>
+                <h3 className={styles.Title}>Send on CTRL+ENTER</h3>
                 <FormControl component="fieldset">
                     <RadioGroup
                     aria-label=""

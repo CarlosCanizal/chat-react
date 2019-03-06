@@ -4,7 +4,7 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
-
+import styles from './ClockSelector.module.sass'
 
 
 class ClockSelector extends Component{
@@ -24,9 +24,10 @@ class ClockSelector extends Component{
 
         return(
             <div>
-                <h3>Time Format</h3>
+                <h3 className={styles.Title}>Time Format</h3>
                 <FormControl component="fieldset">
                     <RadioGroup
+                    className={styles.RadioGroup}
                     aria-label=""
                     name="clockSelector"
                     value={this.props.timeFormat}
