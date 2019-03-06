@@ -63,7 +63,13 @@ class MessageBox extends Component{
         return(
             <div>
                 <div className={styles.MessageBox}>
-                    <textarea onKeyDown={keyHandler} placeholder="Write a message" autoFocus={true} value={this.state.message} onChange={MessageHandler} ></textarea>
+                    <textarea 
+                        onKeyDown={keyHandler} 
+                        placeholder={this.props.labels.messagePlaceholder} 
+                        autoFocus={true} 
+                        value={this.state.message} 
+                        onChange={MessageHandler} >
+                    </textarea>
                 </div>
                 <div className={themeClass.join(' ')} onClick={sendMessage}>
                     <FontAwesomeIcon icon="paper-plane" />
@@ -74,7 +80,8 @@ class MessageBox extends Component{
 }
 const mapStateToProps = state =>{
     return {
-        ...state.settings
+        ...state.settings,
+        ...state.labels
     };
 };
   

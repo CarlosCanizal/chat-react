@@ -21,5 +21,7 @@
     "sendEnter":{
         "on": "Use Ctr+Enter to send",
         "off": "Use Enter to send"
-    }
+    },
+    "messagePlaceholder":"Write a message...",
+    "resetSettings":"Reset Settings"
 }

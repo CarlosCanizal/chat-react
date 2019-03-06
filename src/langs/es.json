@@ -21,5 +21,7 @@
     "sendEnter":{
         "on": "Usar Ctr+Enter para enviar",
         "off": "Usar Enter para enviar"
-    }
+    },
+    "messagePlaceholder":"Escribre tu mensaje...",
+    "resetSettings":"Reiniciar Configuración"
 }

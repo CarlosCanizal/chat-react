@@ -16,6 +16,12 @@ const reducer = (state=initialState, action)=>{
             ...state,
             labels: labels
         }
+    }else if (action.type === 'RESET_SETTINGS'){
+        const labels = require('../langs/'+defaultLang+'.json')
+        return {
+            ...state,
+            labels: labels
+        }
     }
     return state
 }

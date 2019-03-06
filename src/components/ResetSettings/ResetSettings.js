@@ -6,7 +6,7 @@ class ResetSettings extends Component{
     render(){
         return(
             <Button size="large" onClick={this.props.resetSettings}>
-                Reset Settings
+                {this.props.labels.resetSettings}
             </Button>
         )
     }
@@ -14,7 +14,8 @@ class ResetSettings extends Component{
 
 const mapStateToProps = state =>{
     return {
-        ...state.settings
+        ...state.settings,
+        ...state.labels
     };
 };
 
