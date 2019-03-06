@@ -56,12 +56,16 @@ class MessageBox extends Component{
             this.setState({message:event.target.value})
         }
 
+        let themeClass = [styles.SendButton]
+        themeClass.push(styles[this.props.theme])
+
+
         return(
             <div>
                 <div className={styles.MessageBox}>
                     <textarea onKeyDown={keyHandler} placeholder="Write a message" autoFocus={true} value={this.state.message} onChange={MessageHandler} ></textarea>
                 </div>
-                <div className={styles.SendButton} onClick={sendMessage}>
+                <div className={themeClass.join(' ')} onClick={sendMessage}>
                     <FontAwesomeIcon icon="paper-plane" />
                 </div>
             </div>

@@ -14,7 +14,6 @@
 
 .SendButton
     cursor: pointer
-    background: linear-gradient(to right, var(--lightMain), var(--lightAccent), var(--lightEnd));
     justify-content: center
     width: 20%
     float: left
@@ -24,8 +23,15 @@
     align-items: center
     svg
         font-size: 30px
-    
-    &:hover
-        color: #CCC
-        svg 
-            font-size: 35px
+    &.light
+        background: linear-gradient(to right, var(--lightMain), var(--lightAccent), var(--lightEnd));
+        &:hover
+            color: #CCC
+            svg 
+                font-size: 35px
+    &.dark
+        background: linear-gradient(to right, var(--darkMain), var(--darkAccent));
+        &:hover
+            color: #CCC
+            svg 
+                font-size: 35px
