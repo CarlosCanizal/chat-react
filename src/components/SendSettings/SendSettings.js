@@ -1,19 +1,36 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Switch from '@material-ui/core/Switch';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
 
 class SendSettings extends Component{
 
     render(){
+        const formats = ['on', 'off'];
+        let CtrHandler= (event)=>{
+            this.props.onChangeSendOption(event.target.value);
+        };
+
+        let ctrlOnOff =  formats.map((ctrlOption, index)=>{
+            return(
+                <FormControlLabel key={index} value={ctrlOption} control={<Radio />} label={ctrlOption} />
+            )
+        });
         return(
             <div>
                 <h3>Send on CTRL+ENTER</h3>
-                <label>Off</label>
-                <Switch
-                    onChange={()=>this.props.onChangeSendOption(!this.props.ctrlSend)}
-                    checked={this.props.ctrlSend}
-                />
-                <label>On</label>
+                <FormControl component="fieldset">
+                    <RadioGroup
+                    aria-label=""
+                    name="ctrSelector"
+                    value={this.props.ctrlSend}
+                    onChange={CtrHandler}
+                    >
+                    {ctrlOnOff}
+                    </RadioGroup>
+                </FormControl>
             </div>
         )
     }

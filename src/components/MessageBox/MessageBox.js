@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import io from "socket.io-client";
+import styles from './MessageBox.module.sass'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class MessageBox extends Component{
     state= {
@@ -35,14 +37,33 @@ class MessageBox extends Component{
             this.setState({message:""})
         }
 
+        let keyHandler = (event)=>{
+            if(event.key==="Enter"){
+                // event.preventDefault()
+                if(this.props.ctrlSend === "on"){
+                    if( event.ctrlKey || event.metaKey ){
+                        sendMessage(event)
+                    }
+                }else{
+                    sendMessage(event)
+                }
+            }
+        }
+
+
+
         let MessageHandler =(event)=>{
             this.setState({message:event.target.value})
         }
 
         return(
             <div>
-                <textarea value={this.state.message} onChange={MessageHandler}></textarea>
-                <button onClick={sendMessage}> Send </button>
+                <div className={styles.MessageBox}>
+                    <textarea onKeyDown={keyHandler} placeholder="Write a message" autoFocus={true} value={this.state.message} onChange={MessageHandler} ></textarea>
+                </div>
+                <div className={styles.SendButton} onClick={sendMessage}>
+                    <FontAwesomeIcon icon="paper-plane" />
+                </div>
             </div>
         )
     }

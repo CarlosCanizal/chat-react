@@ -1,5 +1,7 @@
 .Bubble
-    width: 70%
+    display: inline-block
+    max-width: 70%
+    min-width: 300px
     margin-top: 30px
     padding: 20px
     &.left
@@ -10,6 +12,19 @@
         border-top-right-radius: 50px
         border-bottom-right-radius: 50px
         border-bottom-left-radius: 50px
+        .message
+            margin: 10px 0
+            color: #FFF
+            font-size: 20px
+        .username
+            font-style: italic
+            font-size: 14px
+            color: #999
+        .time
+            text-align: right
+            font-style: italic
+            font-size: 14px
+            color: #999
     &.right
         text-align: right
         float: right
@@ -18,4 +33,18 @@
         border-top-left-radius: 50px
         border-bottom-left-radius: 50px
         border-bottom-right-radius: 50px
+        .message
+            margin: 10px 0
+            color: #FFF
+            font-size: 20px
+        .username
+            text-align: right
+            font-style: italic
+            font-size: 14px
+            color: #999
+        .time
+            text-align: left
+            font-style: italic
+            font-size: 14px
+            color: #999
 

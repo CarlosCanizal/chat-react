@@ -5,7 +5,7 @@ const defaultSettings = {
     theme : 'light',
     timeFormat: 'hours12',
     language: 'en',
-    ctrlSend : false,
+    ctrlSend : 'off',
     username : 'guest-'+userId,
     userId: userId
 }
@@ -47,6 +47,7 @@ const reducer = (state=initialState, action)=>{
         }
     }
     else if (action.type === 'CHANGE_CTRL_SEND'){
+
         localStorage.setItem('ctrlSend',action.ctrlSend);
         return {
             ...state,
