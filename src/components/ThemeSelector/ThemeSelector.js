@@ -15,7 +15,7 @@ class ThemeSelector extends Component{
             }
             let themes = themeList.map((theme, index)=>{
             return(
-                <FormControlLabel className={themeClass.join(' ')} key={index} value={theme} control={<Radio />} label={theme} />
+                <FormControlLabel className={themeClass.join(' ')} key={index} value={theme} control={<Radio />} label={this.props.labels.themeLabels[theme]} />
             )
         });
         let themeHandler= (event)=>{
@@ -23,7 +23,7 @@ class ThemeSelector extends Component{
         };
         return (
             <div>
-                <h3 className={styles.Title}>Select Your Theme</h3>
+                <h3 className={styles.Title}>{this.props.labels.selectTheme}</h3>
                 <FormControl component="fieldset">
                     <RadioGroup
                     className={styles.RadioGroup}
@@ -42,7 +42,8 @@ class ThemeSelector extends Component{
 
 const mapStateToProps = state =>{
     return {
-        theme : state.settings.theme
+        ...state.settings,
+        ...state.labels
     };
 };
   

@@ -9,7 +9,7 @@ import styles from '../Settings/Settings.module.sass'
 class SendSettings extends Component{
 
     render(){
-        const formats = ['on', 'off'];
+        const formats = ['off', 'on'];
         let CtrHandler= (event)=>{
             this.props.onChangeSendOption(event.target.value);
         };
@@ -20,12 +20,12 @@ class SendSettings extends Component{
 
         let ctrlOnOff =  formats.map((ctrlOption, index)=>{
             return(
-                <FormControlLabel className={themeClass.join(' ')} key={index} value={ctrlOption} control={<Radio />} label={ctrlOption} />
+                <FormControlLabel className={themeClass.join(' ')} key={index} value={ctrlOption} control={<Radio />} label={this.props.labels.sendEnter[ctrlOption]} />
             )
         });
         return(
             <div>
-                <h3 className={styles.Title}>Send on CTRL+ENTER</h3>
+                <h3 className={styles.Title}>{this.props.labels.sendSettings}</h3>
                 <FormControl component="fieldset">
                     <RadioGroup
                     aria-label=""
@@ -42,10 +42,10 @@ class SendSettings extends Component{
 
 }
 
-
 const mapStateToProps = state =>{
     return {
-        ...state.settings
+        ...state.settings,
+        ...state.labels
     };
 };
   

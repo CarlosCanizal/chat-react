@@ -18,10 +18,10 @@ class Username extends Component{
             <TextField
                 className={themeClass.join(' ')}
                 id="outlined-full-width"
-                label="Username"
+                label={this.props.labels.username}
                 style={{ 'marginTop': 20 }}
-                placeholder="Choose your nickname"
-                helperText="This is the name will appear in the chat"
+                placeholder={this.props.labels.placeholder}
+                helperText={this.props.labels.helper}
                 fullWidth
                 defaultValue={this.props.username}
                 margin="none"
@@ -37,8 +37,8 @@ class Username extends Component{
 
 const mapStateToProps = state =>{
     return {
-        ...state.settings
-        // username : state.settings.username
+        ...state.settings,
+        ...state.labels
     };
 };
   

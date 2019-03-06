@@ -1,3 +1,25 @@
 {
-    "username":"Username"
+    "username":"Username",
+    "placeholder":"Choose your Nickname",
+    "helper":"This is the name will appear in the chat",
+    "selectLanguage": "Select Interface Language",
+    "langLabels":{
+        "en":"English",
+        "es":"Español"
+    },
+    "selectTheme": "Theme Appearance",
+    "themeLabels":{
+        "light": "Light",
+        "dark": "Dark"
+    },
+    "timeFormat": "Hours Format",
+    "timeLabels":{
+        "hours12":"12 Hours",
+        "hours24":"24 Hours"
+    },
+    "sendSettings": "Send Settings",
+    "sendEnter":{
+        "on": "Use Ctr+Enter to send",
+        "off": "Use Enter to send"
+    }
 }

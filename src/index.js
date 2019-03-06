@@ -5,10 +5,12 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { createStore, combineReducers } from 'redux';
 import settingsReducer from './store/settingsReducer';
+import languageReducer from './store/languageReducer';
 import { Provider } from 'react-redux';
 
 const rootReducer = combineReducers({
     'settings': settingsReducer,
+    'labels': languageReducer
 });
 
 const store = createStore(rootReducer);

@@ -12,7 +12,7 @@ class LanguageSelector extends Component{
         const languagesList = ['en','es'];
         let options = languagesList.map((language, index)=>{
             return(
-                <MenuItem key={index} value={language}>{language}</MenuItem>
+                <MenuItem key={index} value={language}>{this.props.labels.langLabels[language]}</MenuItem>
             )
         });
 
@@ -25,10 +25,9 @@ class LanguageSelector extends Component{
             themeClass.push(styles.dark)
         }
 
-
         return(
             <div>
-                <h3 className={styles.Title}>Language</h3>
+                <h3 className={styles.Title}>{this.props.labels.selectLanguage}</h3>
                 <FormControl component="fieldset">
                 <Select className={themeClass.join(' ')}
                     value={this.props.language}
@@ -46,7 +45,7 @@ class LanguageSelector extends Component{
 const mapStateToProps = state =>{
     return {
         ...state.settings,
-        language : state.settings.language
+        ...state.labels
     };
 };
   

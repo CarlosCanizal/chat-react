@@ -22,13 +22,13 @@ class ClockSelector extends Component{
 
         let timeFormat =  formats.map((format, index)=>{
             return(
-                <FormControlLabel className={themeClass.join(' ')} key={index} value={format} control={<Radio />} label={format} />
+                <FormControlLabel className={themeClass.join(' ')} key={index} value={format} control={<Radio />} label={this.props.labels.timeLabels[format]} />
             )
         });
 
         return(
             <div>
-                <h3 className={styles.Title}>Time Format</h3>
+                <h3 className={styles.Title}>{this.props.labels.timeFormat}</h3>
                 <FormControl component="fieldset">
                     <RadioGroup
                     className={styles.RadioGroup}
@@ -49,7 +49,7 @@ class ClockSelector extends Component{
 const mapStateToProps = state =>{
     return {
         ...state.settings,
-        timeFormat : state.settings.timeFormat
+        ...state.labels
     };
 };
   

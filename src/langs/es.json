@@ -1,3 +1,25 @@
 {
-    "username":"Nombre"
+    "username":"Nombre",
+    "placeholder":"Elige tu nombre",
+    "helper":"Con este nombre apareceras en el chat",
+    "selectLanguage": "Idioma de la interface",
+    "langLabels":{
+        "en":"English",
+        "es":"Español"
+    },
+    "selectTheme": "Apariencia del Tema",
+    "themeLabels":{
+        "light": "Claro",
+        "dark": "Oscuro"
+    },
+    "timeFormat": "Formato de Horas",
+    "timeLabels":{
+        "hours12":"12 Horas",
+        "hours24":"24 Horas"
+    },
+    "sendSettings": "Opciones de envio",
+    "sendEnter":{
+        "on": "Usar Ctr+Enter para enviar",
+        "off": "Usar Enter para enviar"
+    }
 }
