@@ -6,8 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Header.sass'
 
 class Header extends Component{
-
-    
     render(){
         let themeClass = [styles.Header];
         themeClass.push(styles[this.props.theme]);
@@ -16,6 +14,9 @@ class Header extends Component{
             <header className={themeClass.join(' ')}>
                 <nav>
                     <NavLink to="/messages" exact> 
+                        <div className={styles.notification}>
+                            10
+                        </div>
                         <FontAwesomeIcon icon="comments" />
                         {this.props.labels.messages}
                     </NavLink>
