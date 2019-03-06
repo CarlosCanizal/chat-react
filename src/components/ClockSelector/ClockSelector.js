@@ -4,7 +4,7 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
-import styles from './ClockSelector.module.sass'
+import styles from '../Settings/Settings.module.sass'
 
 
 class ClockSelector extends Component{
@@ -15,10 +15,14 @@ class ClockSelector extends Component{
         let clockHandler= (event)=>{
             this.props.onChangeClock(event.target.value);
         };
+        let themeClass = []
+        if(this.props.theme === 'dark'){
+            themeClass.push(styles.MuiFormControlLabel)
+        }
 
         let timeFormat =  formats.map((format, index)=>{
             return(
-                <FormControlLabel key={index} value={format} control={<Radio />} label={format} />
+                <FormControlLabel className={themeClass.join(' ')} key={index} value={format} control={<Radio />} label={format} />
             )
         });
 
@@ -44,6 +48,7 @@ class ClockSelector extends Component{
 
 const mapStateToProps = state =>{
     return {
+        ...state,
         timeFormat : state.timeFormat
     };
 };

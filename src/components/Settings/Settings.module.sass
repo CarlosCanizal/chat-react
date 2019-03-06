@@ -1,7 +1,37 @@
 .SettingsBox
-    border: solid 1px #ccc
     padding: 10px
     border-radius: 4px
     margin-top: 20px
     h3
         margin: 10px 0
+    &.light
+        border: solid 1px #999
+        .Title
+            color: #666
+    &.dark
+        border: solid 1px #CCC
+        .Title
+            color: #CCC
+.MuiFormControlLabel
+    span
+        color: #FFF !important
+
+.MuiInputLabel
+    &.dark
+        margin-top: 20px
+        fieldset
+            border-color: #FFF
+        input, p, label
+            color: #FFF
+
+.SelectMedium
+    width: 200px
+    &.dark
+        color: #FFF
+        border-bottom: 2px solid #FFF;
+        svg
+            color: #FFF
+
+fieldset .RadioGroup
+    display: inline-block
+

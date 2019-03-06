@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import TextField from '@material-ui/core/TextField';
+import styles from '../Settings/Settings.module.sass'
 
 class Username extends Component{
     render(){
@@ -8,9 +9,14 @@ class Username extends Component{
         let changeNameHandler =(event)=>{
             this.props.onChangeUsername(event.target.value);
         }
+        let themeClass = [styles.MuiInputLabel]
+        if(this.props.theme === 'dark'){
+            themeClass.push(styles.dark)
+        }
 
         return(
             <TextField
+                className={themeClass.join(' ')}
                 id="outlined-full-width"
                 label="Username"
                 style={{ 'marginTop': 20 }}
@@ -22,8 +28,7 @@ class Username extends Component{
                 variant="outlined"
                 onChange={changeNameHandler}
                 InputLabelProps={{
-                    shrink: true,
-                }}
+                    shrink: true                }}
             />
         )
     }
@@ -32,6 +37,7 @@ class Username extends Component{
 
 const mapStateToProps = state =>{
     return {
+        ...state,
         username : state.username
     };
 };

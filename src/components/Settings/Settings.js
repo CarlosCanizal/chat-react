@@ -12,12 +12,14 @@ import styles from './Settings.module.sass'
 
 class Settings extends Component {
   render() {
+    let themeClass = [styles.SettingsBox];
+    themeClass.push(styles[this.props.theme]);
 
     return (
         <div>
             <BodyApp>
               <Username />
-              <div className={styles.SettingsBox}>
+              <div className={themeClass.join(' ')}>
                 <ThemeSelector />
                 <ClockSelector />
                 <LanguageSelector />
@@ -32,4 +34,9 @@ class Settings extends Component {
   }
 }
 
-export default connect()(Settings);
+const mapStateToProps = state =>{
+  return {
+      ...state
+  };
+};
+export default connect(mapStateToProps)(Settings);

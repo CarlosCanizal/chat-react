@@ -4,7 +4,7 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
-import styles from './SendSettings.module.sass'
+import styles from '../Settings/Settings.module.sass'
 
 class SendSettings extends Component{
 
@@ -13,10 +13,14 @@ class SendSettings extends Component{
         let CtrHandler= (event)=>{
             this.props.onChangeSendOption(event.target.value);
         };
+        let themeClass = []
+        if(this.props.theme === 'dark'){
+            themeClass.push(styles.MuiFormControlLabel)
+        }
 
         let ctrlOnOff =  formats.map((ctrlOption, index)=>{
             return(
-                <FormControlLabel key={index} value={ctrlOption} control={<Radio />} label={ctrlOption} />
+                <FormControlLabel className={themeClass.join(' ')} key={index} value={ctrlOption} control={<Radio />} label={ctrlOption} />
             )
         });
         return(
