@@ -15,6 +15,8 @@ let language = localStorage.getItem('language')?localStorage.getItem('language')
 let ctrlSend = localStorage.getItem('ctrlSend')?localStorage.getItem('ctrlSend'):defaultSettings['ctrlSend'];
 let username = localStorage.getItem('username')?localStorage.getItem('username'):defaultSettings['username'];
 
+
+
 const initialState = {
     theme : theme,
     timeFormat: timeFormat,

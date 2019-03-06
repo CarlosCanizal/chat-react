@@ -26,7 +26,7 @@ class Bubble extends Component{
 
 const mapStateToProps = state =>{
     return {
-        ...state
+        ...state.settings
     };
 };
 

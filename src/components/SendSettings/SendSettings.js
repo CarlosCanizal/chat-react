@@ -45,7 +45,7 @@ class SendSettings extends Component{
 
 const mapStateToProps = state =>{
     return {
-        ...state
+        ...state.settings
     };
 };
   

@@ -3,10 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.sass';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { createStore } from 'redux';
-import reducer from './store/reducer';
+import { createStore, combineReducers } from 'redux';
+import settingsReducer from './store/settingsReducer';
 import { Provider } from 'react-redux';
-const store = createStore(reducer);
+
+const rootReducer = combineReducers({
+    'settings': settingsReducer,
+});
+
+const store = createStore(rootReducer);
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

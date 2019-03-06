@@ -45,8 +45,8 @@ class LanguageSelector extends Component{
 
 const mapStateToProps = state =>{
     return {
-        ...state,
-        language : state.language
+        ...state.settings,
+        language : state.settings.language
     };
 };
   

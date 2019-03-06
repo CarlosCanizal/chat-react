@@ -14,7 +14,7 @@ class ResetSettings extends Component{
 
 const mapStateToProps = state =>{
     return {
-        ...state
+        ...state.settings
     };
 };
 

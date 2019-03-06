@@ -48,8 +48,8 @@ class ClockSelector extends Component{
 
 const mapStateToProps = state =>{
     return {
-        ...state,
-        timeFormat : state.timeFormat
+        ...state.settings,
+        timeFormat : state.settings.timeFormat
     };
 };
   

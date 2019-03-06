@@ -37,8 +37,8 @@ class Username extends Component{
 
 const mapStateToProps = state =>{
     return {
-        ...state,
-        username : state.username
+        ...state.settings
+        // username : state.settings.username
     };
 };
   

@@ -36,7 +36,7 @@ class Settings extends Component {
 
 const mapStateToProps = state =>{
   return {
-      ...state
+      ...state.settings
   };
 };
 export default connect(mapStateToProps)(Settings);

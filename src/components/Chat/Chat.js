@@ -44,8 +44,8 @@ class Chat extends Component {
 
 const mapStateToProps = state =>{
   return {
-    ...state,
-    theme : state.theme
+    ...state.settings,
+    theme : state.settings.theme
   };
 };
 

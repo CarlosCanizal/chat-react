@@ -24,7 +24,7 @@ class App extends Component {
 
 const mapStateToProps = state =>{
   return {
-      ...state
+      ...state.settings
   };
 };
 export default connect(mapStateToProps)(App);

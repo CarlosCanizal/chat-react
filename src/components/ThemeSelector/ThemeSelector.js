@@ -42,7 +42,7 @@ class ThemeSelector extends Component{
 
 const mapStateToProps = state =>{
     return {
-        theme : state.theme
+        theme : state.settings.theme
     };
 };
   
