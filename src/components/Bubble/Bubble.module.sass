@@ -47,4 +47,11 @@
             font-style: italic
             font-size: 13px
             color: #666
+.clearFix
+    overflow: auto
 
+.clearFix::after
+  content: ""
+  clear: both
+  display: table
+    

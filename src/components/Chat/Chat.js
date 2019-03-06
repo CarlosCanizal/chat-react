@@ -3,26 +3,12 @@ import BodyApp from '../BodyApp/BodyApp';
 import Footer from '../Footer/Footer';
 import MessageBox from '../MessageBox/MessageBox';
 import { connect } from 'react-redux';
-import io from "socket.io-client";
 import Bubble from '../Bubble/Bubble';
 
 class Chat extends Component {
-  state ={
-    messages:[]
-  }
-  componentDidMount(){
-    let socket = io('localhost:8080');
-    socket.on('RECEIVE_MESSAGE', (data)=>{
-      console.log(data)
-      let messages = [...this.state.messages];
-      messages.push(data)
-      this.setState({messages:messages});
-    });
-  }
-
   render() {
   
-    let bubbles = this.state.messages.map((message, index)=>{
+    let bubbles = this.props.messages.map((message, index)=>{
       return(
         <Bubble key={index} message={message} />
       )
@@ -45,14 +31,8 @@ class Chat extends Component {
 const mapStateToProps = state =>{
   return {
     ...state.settings,
-    theme : state.settings.theme
+    ...state.messages
   };
 };
 
-const mapDispatchToProps = dispatch=>{
-  return {
-    onChangeTheme : ()=> dispatch({type: 'CHANGE_THEME', theme:'dark'})
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Chat);
+export default connect(mapStateToProps)(Chat);

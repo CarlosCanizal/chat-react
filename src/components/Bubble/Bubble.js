@@ -13,11 +13,13 @@ class Bubble extends Component{
         let time = this.props.message[this.props.timeFormat]
 
         return(
-            <div className={classNames.join(" ")}>
-                <div className={styles.username}>{this.props.message.username}:</div>
-                <div className={styles.message}>{this.props.message.message}</div>
-                <div className={styles.time}>
-                    {time}
+            <div className={styles.clearFix}>
+                <div className={classNames.join(" ")}>
+                    <div className={styles.username}>{this.props.message.username}:</div>
+                    <div className={styles.message}>{this.props.message.message}</div>
+                    <div className={styles.time}>
+                        {time}
+                    </div>
                 </div>
             </div>
         )

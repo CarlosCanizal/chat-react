@@ -9,7 +9,7 @@ class MessageBox extends Component{
         message : ""
     }
     render(){
-        this.socket = io('localhost:8080');
+        this.socket = io('192.168.0.5:8080');
 
         let sendMessage = event => {
             event.preventDefault();

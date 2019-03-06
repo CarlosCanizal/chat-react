@@ -6,11 +6,14 @@ import * as serviceWorker from './serviceWorker';
 import { createStore, combineReducers } from 'redux';
 import settingsReducer from './store/settingsReducer';
 import languageReducer from './store/languageReducer';
+import messagesReducer from './store/messagesReducer';
+
 import { Provider } from 'react-redux';
 
 const rootReducer = combineReducers({
     'settings': settingsReducer,
-    'labels': languageReducer
+    'labels': languageReducer,
+    'messages': messagesReducer
 });
 
 const store = createStore(rootReducer);

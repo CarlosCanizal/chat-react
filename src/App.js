@@ -5,11 +5,19 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faPaperPlane, faComments, faSlidersH } from '@fortawesome/free-solid-svg-icons'
 import { connect } from 'react-redux';
 import styles from './App.module.sass';
+import io from "socket.io-client";
 
 library.add(faPaperPlane)
 library.add(faComments)
 library.add(faSlidersH)
 class App extends Component {
+  componentDidMount(){
+    let socket = io('192.168.0.5:8080');
+    socket.on('RECEIVE_MESSAGE', (data)=>{
+      this.props.onReceiveMessage(data);
+    });
+  }
+
   render() {
     let themeClass = [styles.App];
     themeClass.push(styles[this.props.theme]);
@@ -29,4 +37,10 @@ const mapStateToProps = state =>{
       ...state.settings
   };
 };
-export default connect(mapStateToProps)(App);
+
+const mapDispatchToProps = dispatch=>{
+  return {
+    onReceiveMessage : (message)=> dispatch({type: 'RECEIVE_MESSAGE', message:message})
+  };
+};
+export default connect(mapStateToProps,mapDispatchToProps)(App);

@@ -39,7 +39,8 @@ class Header extends Component{
 const mapStateToProps = state =>{
     return {
         ...state.settings,
-        ...state.labels
+        ...state.labels,
+        notifications: state.messages.notifications
     };
 };
 

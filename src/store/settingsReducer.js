@@ -7,8 +7,7 @@ const defaultSettings = {
     language: 'en',
     ctrlSend : 'off',
     username : 'guest-'+userId,
-    userId: userId,
-    notifications: 15
+    userId: userId
 }
 let theme = localStorage.getItem('theme')?localStorage.getItem('theme'):defaultSettings['theme'];
 let timeFormat = localStorage.getItem('timeFormat')?localStorage.getItem('timeFormat'):defaultSettings['timeFormat'];
@@ -24,8 +23,7 @@ const initialState = {
     language: language,
     ctrlSend: ctrlSend,
     username: username,
-    userId: userId,
-    notifications: 15
+    userId: userId
 }
 
 const reducer = (state=initialState, action)=>{
