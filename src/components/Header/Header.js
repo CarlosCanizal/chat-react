@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter  } from 'react-router-dom';
 import styles from './Header.module.sass';
 import { connect } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import './Header.sass'
 
 class Header extends Component{
 
@@ -13,8 +15,14 @@ class Header extends Component{
         return (
             <header className={themeClass.join(' ')}>
                 <nav>
-                    <NavLink to="/" exact>Home</NavLink>
-                    <NavLink to="/settings" exact>Settings</NavLink>
+                    <NavLink to="/messages" exact> 
+                        <FontAwesomeIcon icon="comments" />
+                        Messages
+                    </NavLink>
+                    <NavLink to="/settings" exact>
+                        <FontAwesomeIcon icon="sliders-h" />
+                        Config
+                    </NavLink>
                 </nav>
             </header>
         )
@@ -27,4 +35,4 @@ const mapStateToProps = state =>{
     };
 };
 
-export default connect(mapStateToProps)(Header);
+export default withRouter(connect(mapStateToProps)(Header));

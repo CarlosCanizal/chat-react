@@ -10,7 +10,7 @@ class Theme extends Component{
         return(
             <div className={styles.Theme}>
                 <Header />
-                <Route  path="/" exact component={Chat}/>
+                <Route  path="/messages" exact component={Chat}/>
                 <Route  path="/settings" exact component={Settings}/>
             </div>
         )
