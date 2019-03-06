@@ -9,27 +9,17 @@ class Chat extends Component {
   render() {
 
     this.socket = io('localhost:8080');
-
-    let sendMessage = ev => {
-      ev.preventDefault();
-      this.socket.emit('SEND_MESSAGE', {
-          author: this.props.username,
-          message: "Hey Listen"
-      });
-      this.socket.on('RECEIVE_MESSAGE', function(data){
-        console.log(data)
-        // addMessage(data);
-      });
-      this.setState({message: ''});
-    }
+    this.socket.on('RECEIVE_MESSAGE', function(data){
+      console.log(data)
+      // addMessage(data);
+    });
 
     return (
         <div>
             <BodyApp>
-              <button onClick={sendMessage} className="btn btn-primary form-control">Send</button>
             </BodyApp>
             <Footer >
-                <MessageBox></MessageBox>
+                <MessageBox username={this.props.username} socket={this.socket}></MessageBox>
             </Footer>
         </div>
     );

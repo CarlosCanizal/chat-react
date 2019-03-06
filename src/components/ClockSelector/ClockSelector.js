@@ -10,7 +10,7 @@ import FormControl from '@material-ui/core/FormControl';
 class ClockSelector extends Component{
 
     render(){
-        const formats = ['12Hours', '24Hours'];
+        const formats = ['hours12', 'hours24'];
 
         let clockHandler= (event)=>{
             this.props.onChangeClock(event.target.value);

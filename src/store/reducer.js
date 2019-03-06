@@ -1,6 +1,6 @@
 const defaultSettings = {
     theme : 'light',
-    timeFormat: '12Hours',
+    timeFormat: 'hours12',
     language: 'en',
     ctrlSend : false,
     username : 'guest'
