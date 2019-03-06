@@ -17,11 +17,11 @@ class Header extends Component{
                 <nav>
                     <NavLink to="/messages" exact> 
                         <FontAwesomeIcon icon="comments" />
-                        Messages
+                        {this.props.labels.messages}
                     </NavLink>
                     <NavLink to="/settings" exact>
                         <FontAwesomeIcon icon="sliders-h" />
-                        Config
+                        {this.props.labels.config}
                     </NavLink>
                 </nav>
             </header>
@@ -31,7 +31,8 @@ class Header extends Component{
 
 const mapStateToProps = state =>{
     return {
-        theme : state.settings.theme
+        ...state.settings,
+        ...state.labels
     };
 };
 

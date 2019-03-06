@@ -1,4 +1,6 @@
-{
+{   
+    "messages":"Mensajes",
+    "config":"Config",
     "username":"Username",
     "placeholder":"Choose your Nickname",
     "helper":"This is the name will appear in the chat",
