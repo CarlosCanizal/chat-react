@@ -4,7 +4,6 @@ import Footer from '../Footer/Footer';
 import MessageBox from '../MessageBox/MessageBox';
 import { connect } from 'react-redux';
 import io from "socket.io-client";
-import styles from './Chat.module.sass';
 import Bubble from '../Bubble/Bubble';
 
 class Chat extends Component {
@@ -14,7 +13,6 @@ class Chat extends Component {
   componentDidMount(){
     let socket = io('localhost:8080');
     socket.on('RECEIVE_MESSAGE', (data)=>{
-      console.log(data)
       let messages = [...this.state.messages];
       messages.push(data)
       this.setState({messages:messages});
@@ -23,10 +21,9 @@ class Chat extends Component {
 
   render() {
   
-
     let bubbles = this.state.messages.map((message, index)=>{
       return(
-        <Bubble key={index} message={message} align="left"/>
+        <Bubble key={index} message={message} />
       )
     });
 

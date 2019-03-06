@@ -1,10 +1,13 @@
+const userId = localStorage.getItem('userId')?localStorage.getItem('userId'):Math.random().toString(36).slice(-5);
+localStorage.setItem('userId',userId);
+
 const defaultSettings = {
     theme : 'light',
     timeFormat: 'hours12',
     language: 'en',
     ctrlSend : false,
-    username : 'guest'
-
+    username : 'guest-'+userId,
+    userId: userId
 }
 let theme = localStorage.getItem('theme')?localStorage.getItem('theme'):defaultSettings['theme'];
 let timeFormat = localStorage.getItem('timeFormat')?localStorage.getItem('timeFormat'):defaultSettings['timeFormat'];
@@ -17,7 +20,8 @@ const initialState = {
     timeFormat: timeFormat,
     language: language,
     ctrlSend: ctrlSend,
-    username: username
+    username: username,
+    userId: userId
 }
 
 const reducer = (state=initialState, action)=>{
