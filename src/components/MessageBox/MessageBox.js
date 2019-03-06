@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import io from "socket.io-client";
 
 class MessageBox extends Component{
     state= {
         message : ""
     }
     render(){
+        this.socket = io('localhost:8080');
 
         let sendMessage = event => {
             event.preventDefault();
@@ -21,7 +24,7 @@ class MessageBox extends Component{
             }
             let hours12 = hour12+":"+minutes+":"+seconds+" "+timeLabel;
             
-            this.props.socket.emit('SEND_MESSAGE', {
+            this.socket.emit('SEND_MESSAGE', {
                 author: this.props.username,
                 message: this.state.message,
                 hours12: hours12,
@@ -29,7 +32,6 @@ class MessageBox extends Component{
                 
             });
             this.setState({message:""})
-
         }
 
         let MessageHandler =(event)=>{
@@ -44,5 +46,16 @@ class MessageBox extends Component{
         )
     }
 }
+const mapStateToProps = state =>{
+    return {
+        ...state
+    };
+};
+  
+const mapDispatchToProps = dispatch=>{
+    return {
+        onChangeTheme : ()=> dispatch({type: 'CHANGE_THEME', theme:'dark'})
+    };
+};
 
-export default MessageBox
+export default connect(mapStateToProps, mapDispatchToProps)(MessageBox)

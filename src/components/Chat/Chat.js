@@ -4,22 +4,40 @@ import Footer from '../Footer/Footer';
 import MessageBox from '../MessageBox/MessageBox';
 import { connect } from 'react-redux';
 import io from "socket.io-client";
+import styles from './Chat.module.sass';
+import Bubble from '../Bubble/Bubble';
 
 class Chat extends Component {
-  render() {
-
-    this.socket = io('localhost:8080');
-    this.socket.on('RECEIVE_MESSAGE', function(data){
+  state ={
+    messages:[]
+  }
+  componentDidMount(){
+    let socket = io('localhost:8080');
+    socket.on('RECEIVE_MESSAGE', (data)=>{
       console.log(data)
-      // addMessage(data);
+      let messages = [...this.state.messages];
+      messages.push(data)
+      this.setState({messages:messages});
     });
+  }
+
+  render() {
+  
+
+    let bubbles = this.state.messages.map((message, index)=>{
+      return(
+        <Bubble key={index} message={message} align="left"/>
+      )
+    });
+
 
     return (
         <div>
             <BodyApp>
+              {bubbles}
             </BodyApp>
             <Footer >
-                <MessageBox username={this.props.username} socket={this.socket}></MessageBox>
+                <MessageBox></MessageBox>
             </Footer>
         </div>
     );
