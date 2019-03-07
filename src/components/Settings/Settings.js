@@ -18,12 +18,14 @@ class Settings extends Component {
     return (
         <div>
             <BodyApp>
-              <Username />
-              <div className={themeClass.join(' ')}>
-                <ThemeSelector />
-                <ClockSelector />
-                <LanguageSelector />
-                <SendSettings />
+              <div className={styles.SettingsBody}>
+                <Username />
+                <div className={themeClass.join(' ')}>
+                  <ThemeSelector />
+                  <ClockSelector />
+                  <LanguageSelector />
+                  <SendSettings />
+                </div>
               </div>
             </BodyApp>
             <Footer>

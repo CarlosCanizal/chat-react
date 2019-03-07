@@ -28,8 +28,10 @@ class Chat extends Component {
     return (
         <div>
             <BodyApp>
-              {errorMessage}
-              {bubbles}
+              <div className={styles.ChatBody}>
+                {errorMessage}
+                {bubbles}
+              </div>
             </BodyApp>
             <Footer >
                 <MessageBox></MessageBox>
