@@ -29,7 +29,8 @@ class Username extends Component{
                 variant="outlined"
                 onChange={changeNameHandler}
                 InputLabelProps={{
-                    shrink: true                }}
+                    shrink: true
+                }}
             />
         )
     }
