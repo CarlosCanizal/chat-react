@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Button from '@material-ui/core/Button';
+import styles from './ResetSettings.module.sass'
 
 class ResetSettings extends Component{
     render(){
         return(
-            <Button size="large" onClick={this.props.resetSettings}>
+            <div className={styles.ResetButton} onClick={this.props.resetSettings}>
                 {this.props.labels.resetSettings}
-            </Button>
+            </div>
         )
     }
 }
