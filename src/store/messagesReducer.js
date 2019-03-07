@@ -23,7 +23,6 @@ const reducer = (state=initialState, action)=>{
         }
     }
     else if (action.type === 'RESET_NOTIFICATIONS'){
-        console.log("notificat")
         return {
             ...state,
             notifications: 0

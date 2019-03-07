@@ -7,11 +7,15 @@ import Bubble from '../Bubble/Bubble';
 import styles from './Chat.module.sass'
 
 class Chat extends Component {
+  state ={
+    height: 0
+  }
   componentDidUpdate(){
     this.node.scrollTop = this.node.scrollHeight;
   }
 
   componentDidMount(){
+    this.setState({height:window.innerHeight-116})
     this.node.addEventListener('scroll', this.reachBottom);
   }
 
@@ -42,7 +46,7 @@ class Chat extends Component {
     return (
         <div>
             <BodyApp>
-              <div ref={(node) => { this.node = node; }} className={styles.ChatBody}>
+              <div style={{height:this.state.height}} ref={(node) => { this.node = node; }} className={styles.ChatBody}>
                 {errorMessage}
                 {bubbles}
               </div>
