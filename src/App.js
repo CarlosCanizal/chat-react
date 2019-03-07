@@ -12,9 +12,13 @@ library.add(faComments)
 library.add(faSlidersH)
 class App extends Component {
   componentDidMount(){
-    let socket = io('192.168.0.5:8080');
+    let socket = io('localhos:8080');
     socket.on('RECEIVE_MESSAGE', (data)=>{
       this.props.onReceiveMessage(data);
+    });
+
+    socket.io.on('connect_error', (err)=>{
+      this.props.onReceiveError('connectionError');
     });
   }
 
@@ -40,7 +44,8 @@ const mapStateToProps = state =>{
 
 const mapDispatchToProps = dispatch=>{
   return {
-    onReceiveMessage : (message)=> dispatch({type: 'RECEIVE_MESSAGE', message:message})
+    onReceiveMessage : (message)=> dispatch({type: 'RECEIVE_MESSAGE', message:message}),
+    onReceiveError : (message)=> dispatch({type: 'RECEIVE_ERROR', message:message})
   };
 };
 export default connect(mapStateToProps,mapDispatchToProps)(App);

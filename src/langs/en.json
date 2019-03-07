@@ -1,5 +1,5 @@
 {   
-    "messages":"Mensajes",
+    "messages":"Messages",
     "config":"Config",
     "username":"Username",
     "placeholder":"Choose your Nickname",
@@ -25,5 +25,8 @@
         "off": "Use Enter to send"
     },
     "messagePlaceholder":"Write a message...",
-    "resetSettings":"Reset Settings"
+    "resetSettings":"Reset Settings",
+    "errors":{
+        "connectionError":"Error connecting to server, please verify socket.io server is runnig in port 8080"
+    }
 }

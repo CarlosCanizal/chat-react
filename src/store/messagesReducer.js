@@ -1,6 +1,7 @@
 const initialState = {
     "messages":[],
-    "notifications":0
+    "notifications":0,
+    error: false
 }
 
 const reducer = (state=initialState, action)=>{
@@ -10,7 +11,15 @@ const reducer = (state=initialState, action)=>{
         let notifications = state.notifications;
         return {
             messages: messages,
-            notifications: ++notifications
+            notifications: ++notifications,
+            error: false
+        }
+    }
+    else if (action.type === 'RECEIVE_ERROR'){
+        console.log(action.message)
+        return {
+            ...state,
+            error: action.message
         }
     }
     return state

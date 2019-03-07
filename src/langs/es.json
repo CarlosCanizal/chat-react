@@ -25,5 +25,8 @@
         "off": "Usar Enter para enviar"
     },
     "messagePlaceholder":"Escribre tu mensaje...",
-    "resetSettings":"Reiniciar Configuración"
+    "resetSettings":"Reiniciar Configuración",
+    "errors":{
+        "connectionError":"Error intentando conectarse al servidor, verifica que el servidor se encuentre corriendo en el puerto 8080"
+    }
 }
