@@ -6,7 +6,6 @@ import * as actionTypes from '../../store/actions';
 
 class AvatarSelector extends Component{
     changeAvatarHandler = (avatar)=>{
-        console.log(avatar)
         this.props.onChangeAvatar(avatar);
     }
     render(){

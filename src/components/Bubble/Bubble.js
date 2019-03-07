@@ -21,7 +21,7 @@ class Bubble extends Component{
                     <Avatar avatarName={this.props.message.avatar}  avatarSize='dynamic' />
                 </div>
                 <div className={classNames.join(" ")}>
-                    <div className={styles.username}>{this.props.message.username}:</div>
+                    <div className={styles.username}>{this.props.message.username || this.props.labels.anonymous}:</div>
                     <div className={styles.message}>{this.props.message.message}</div>
                     <div className={styles.time}>
                         {time}
@@ -34,7 +34,8 @@ class Bubble extends Component{
 
 const mapStateToProps = state =>{
     return {
-        ...state.settings
+        ...state.settings,
+        ...state.labels
     };
 };
 
