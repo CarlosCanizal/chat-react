@@ -7,6 +7,10 @@ import Bubble from '../Bubble/Bubble';
 import styles from './Chat.module.sass'
 
 class Chat extends Component {
+  componentDidUpdate(){
+    this.node.scrollTop = this.node.scrollHeight;
+  }
+
   render() {
     let bubbles = "";
     let errorMessage = "";
@@ -17,6 +21,8 @@ class Chat extends Component {
         </h4>
       )
     }else{
+      // this.ChatBody.scrollIntoView({ behavior: 'smooth' });
+      // this.refs['#id'].scrollIntoView({ behavior: "smooth" });
       bubbles = this.props.messages.map((message, index)=>{
         return(
           <Bubble key={index} message={message} />
@@ -28,7 +34,7 @@ class Chat extends Component {
     return (
         <div>
             <BodyApp>
-              <div className={styles.ChatBody}>
+              <div ref={(node) => { this.node = node; }} className={styles.ChatBody}>
                 {errorMessage}
                 {bubbles}
               </div>
