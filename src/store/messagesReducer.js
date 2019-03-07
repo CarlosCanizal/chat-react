@@ -6,11 +6,13 @@ const initialState = {
 
 const reducer = (state=initialState, action)=>{
     if (action.type === 'RECEIVE_MESSAGE'){
-        let messages = [...state.messages,action.message];
+        let messages = [...state.messages,action.payload.message];
         let notifications = state.notifications;
+        if(action.payload.userId !== action.payload.message.userId)
+            notifications++
         return {
             messages: messages,
-            notifications: ++notifications,
+            notifications: notifications,
             error: false
         }
     }

@@ -14,7 +14,7 @@ class App extends Component {
   componentDidMount(){
     this.socket = io('localhost:8080',{ transports : ['websocket'] });
     this.socket.on('RECEIVE_MESSAGE', (data)=>{
-      this.props.onReceiveMessage(data);
+      this.props.onReceiveMessage({message:data, userId:this.props.userId});
     });
 
     this.socket.io.on('connect_error', (err)=>{
@@ -44,7 +44,7 @@ const mapStateToProps = state =>{
 
 const mapDispatchToProps = dispatch=>{
   return {
-    onReceiveMessage : (message)=> dispatch({type: 'RECEIVE_MESSAGE', message:message}),
+    onReceiveMessage : (payload)=> dispatch({type: 'RECEIVE_MESSAGE', payload:payload}),
     onReceiveError : (message)=> dispatch({type: 'RECEIVE_ERROR', message:message})
   };
 };
