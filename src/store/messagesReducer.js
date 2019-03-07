@@ -6,7 +6,6 @@ const initialState = {
 
 const reducer = (state=initialState, action)=>{
     if (action.type === 'RECEIVE_MESSAGE'){
-        console.log(action.message)
         let messages = [...state.messages,action.message];
         let notifications = state.notifications;
         return {
@@ -16,7 +15,6 @@ const reducer = (state=initialState, action)=>{
         }
     }
     else if (action.type === 'RECEIVE_ERROR'){
-        console.log(action.message)
         return {
             ...state,
             error: action.message

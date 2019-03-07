@@ -12,12 +12,12 @@ library.add(faComments)
 library.add(faSlidersH)
 class App extends Component {
   componentDidMount(){
-    let socket = io('localhos:8080');
-    socket.on('RECEIVE_MESSAGE', (data)=>{
+    this.socket = io('localhost:8080',{ transports : ['websocket'] });
+    this.socket.on('RECEIVE_MESSAGE', (data)=>{
       this.props.onReceiveMessage(data);
     });
 
-    socket.io.on('connect_error', (err)=>{
+    this.socket.io.on('connect_error', (err)=>{
       this.props.onReceiveError('connectionError');
     });
   }
