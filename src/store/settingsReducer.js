@@ -7,6 +7,7 @@ const defaultSettings = {
     language: 'en',
     ctrlSend : 'off',
     username : 'guest-'+userId,
+    avatar : 'avatar1',
     userId: userId
 }
 let theme = localStorage.getItem('theme')?localStorage.getItem('theme'):defaultSettings['theme'];
@@ -14,8 +15,7 @@ let timeFormat = localStorage.getItem('timeFormat')?localStorage.getItem('timeFo
 let language = localStorage.getItem('language')?localStorage.getItem('language'):defaultSettings['language'];
 let ctrlSend = localStorage.getItem('ctrlSend')?localStorage.getItem('ctrlSend'):defaultSettings['ctrlSend'];
 let username = localStorage.getItem('username')?localStorage.getItem('username'):defaultSettings['username'];
-
-
+let avatar = localStorage.getItem('avatar')?localStorage.getItem('avatar'):defaultSettings['avatar'];
 
 const initialState = {
     theme : theme,
@@ -23,6 +23,7 @@ const initialState = {
     language: language,
     ctrlSend: ctrlSend,
     username: username,
+    avatar : avatar,
     userId: userId
 }
 
@@ -67,6 +68,13 @@ const reducer = (state=initialState, action)=>{
         return {
             ...state,
             username: action.username
+        }
+    }
+    else if (action.type === 'CHANGE_AVATAR'){
+        localStorage.setItem('avatar',action.avatar);
+        return {
+            ...state,
+            avatar: action.avatar
         }
     }
     return state

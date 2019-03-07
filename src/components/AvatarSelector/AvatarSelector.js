@@ -1,19 +1,25 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styles from './AvatarSelector.module.sass';
-
+import Avatar from '../Avatar/Avatar'
 
 class AvatarSelector extends Component{
+    changeAvatarHandler = (avatar)=>{
+        console.log(avatar)
+        this.props.onChangeAvatar(avatar);
+    }
     render(){
-
-        let className = [styles.Avatar];
-        let classNameActive = [styles.Avatar, styles.active];
+        let avatarList = ['avatar1','avatar2','avatar3'];
+        let avatars = avatarList.map((avatar, index)=>{
+            let activeAvatar = ''
+            if(avatar === this.props.avatar)
+                activeAvatar = 'activeAvatar';
+            return <Avatar key={index} changed={()=>this.changeAvatarHandler(avatar)} avatarName={avatar} activeAvatar={activeAvatar} />
+        });
 
         return(
             <div className={styles.AvatarSelector}>
-                <div className={className.join(' ')}></div>
-                <div className={classNameActive.join(' ')}></div>
-                <div className={className.join(' ')}></div>
+                {avatars}
             </div>
         )
     }
@@ -28,8 +34,8 @@ const mapStateToProps = state =>{
   
 const mapDispatchToProps = dispatch=>{
     return {
-        onChangeClock : (timeFormat)=> dispatch({type: 'CHANGE_CLOCK', timeFormat:timeFormat})
+        onChangeAvatar : (avatar)=> dispatch({type: 'CHANGE_AVATAR', avatar:avatar})
     };
 };
 
-export default connect(mapStateToProps)(AvatarSelector);
+export default connect(mapStateToProps,mapDispatchToProps)(AvatarSelector);
