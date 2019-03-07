@@ -33,6 +33,7 @@ class MessageBox extends Component{
                     message: message,
                     hours12: hours12,
                     hours24: hours24,
+                    avatar: this.props.avatar,
                     userId: this.props.userId
                     
                 });

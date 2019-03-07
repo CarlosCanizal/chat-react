@@ -4,16 +4,35 @@
     margin-right: 20px
     width: 96px
     height: 96px
-    border-radius: 96px
+    border-radius: 80px
     background-size: cover
-    border: solid 3px #CCC
+    border: solid 2px #CCC
     &:hover
-        border: solid 3px #f50057
+        border: solid 2px #f50057
     &.activeAvatar
-        border: solid 3px #f50057
+        border: solid 2px #f50057
     &.avatar1
         background-image: url('../../assets/images/avatar_1.png')
     &.avatar2
         background-image: url('../../assets/images/avatar_2.png')
     &.avatar3
         background-image: url('../../assets/images/avatar_3.png')
+    &.dynamic
+        margin-top: 10px
+        cursor: default
+        width: 50px
+        height: 50px
+    &.small
+        cursor: default
+        float: left
+        width: 40px
+        height: 40px
+        &:hover
+            border: solid 2px #CCC
+
+@media only screen and (max-width: 450px)
+    .Avatar
+        border: solid 1px #CCC
+        &.dynamic
+            width: 20px
+            height: 20px

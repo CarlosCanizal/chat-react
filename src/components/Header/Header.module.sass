@@ -39,3 +39,11 @@
     font-size: 20px
   &:hover
     color: #CCC
+
+.clearFix
+    overflow: auto
+
+.clearFix::after
+  content: ""
+  clear: both
+  display: table

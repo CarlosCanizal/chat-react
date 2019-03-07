@@ -5,11 +5,11 @@ import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Notification from '../Notification/Notification'
 import './Header.sass'
+import Avatar from '../Avatar/Avatar';
 
 class Header extends Component{
     render(){
-        let themeClass = [styles.Header];
-        themeClass.push(styles[this.props.theme]);
+        let themeClass = [styles.Header, styles.clearfix, styles[this.props.theme]];
         
         let notifications = "";
         if(this.props.notifications > 0){
@@ -20,6 +20,7 @@ class Header extends Component{
 
         return (
             <header className={themeClass.join(' ')}>
+                <Avatar avatarName={this.props.avatar} avatarSize='small'/>
                 <nav>
                     <NavLink to="/messages" exact> 
                         {notifications}
