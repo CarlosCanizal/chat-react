@@ -11,6 +11,16 @@ class Chat extends Component {
     this.node.scrollTop = this.node.scrollHeight;
   }
 
+  componentDidMount(){
+    this.node.addEventListener('scroll', this.reachBottom);
+  }
+
+  reachBottom = ()=>{
+    if (this.node.scrollHeight-this.node.clientHeight === this.node.scrollTop){
+      this.props.resetNotifications()
+    }
+  }
+
   render() {
     let bubbles = "";
     let errorMessage = "";
@@ -21,8 +31,6 @@ class Chat extends Component {
         </h4>
       )
     }else{
-      // this.ChatBody.scrollIntoView({ behavior: 'smooth' });
-      // this.refs['#id'].scrollIntoView({ behavior: "smooth" });
       bubbles = this.props.messages.map((message, index)=>{
         return(
           <Bubble key={index} message={message} />
@@ -47,6 +55,13 @@ class Chat extends Component {
   }
 }
 
+const mapDispatchToProps = dispatch=>{
+  return {
+      resetNotifications : ()=> dispatch({type: 'RESET_NOTIFICATIONS'})
+  };
+};
+
+
 const mapStateToProps = state =>{
   return {
     ...state.settings,
@@ -55,4 +70,4 @@ const mapStateToProps = state =>{
   };
 };
 
-export default connect(mapStateToProps)(Chat);
+export default connect(mapStateToProps,mapDispatchToProps)(Chat);

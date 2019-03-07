@@ -22,6 +22,13 @@ const reducer = (state=initialState, action)=>{
             error: action.message
         }
     }
+    else if (action.type === 'RESET_NOTIFICATIONS'){
+        console.log("notificat")
+        return {
+            ...state,
+            notifications: 0
+        }
+    }
     return state
 }
 
