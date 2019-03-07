@@ -1,5 +1,5 @@
 import React,{ Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import Header from '../Header/Header';
 import Settings from '../Settings/Settings';
 import Chat from '../Chat/Chat';
@@ -10,6 +10,7 @@ class Theme extends Component{
         return(
             <div className={styles.Theme}>
                 <Header />
+                <Redirect from="/" to="/messages" />
                 <Route  path="/messages" exact component={Chat}/>
                 <Route  path="/settings" exact component={Settings}/>
             </div>
