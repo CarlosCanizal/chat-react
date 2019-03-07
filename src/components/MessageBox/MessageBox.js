@@ -13,28 +13,31 @@ class MessageBox extends Component{
 
         let sendMessage = event => {
             event.preventDefault();
-            let date = new Date()
-            let hours = date.getHours();
-            let minutes = date.getMinutes();
-            let seconds = date.getSeconds();
-            let hours24 = hours+":"+minutes+":"+seconds+" hrs";
-            let timeLabel = "am";
-            let hour12 = hours > 0?hours:12;
-            if(hours > 12){
-                hour12 = hours-12;
-                timeLabel = "pm";
-            }
-            let hours12 = hour12+":"+minutes+":"+seconds+" "+timeLabel;
-            
-                this.socket.emit('SEND_MESSAGE', {
-                username: this.props.username,
-                message: this.state.message,
-                hours12: hours12,
-                hours24: hours24,
-                userId: this.props.userId
+            let message = this.state.message.trim();
+            if(message){
+                let date = new Date()
+                let hours = date.getHours();
+                let minutes = date.getMinutes();
+                let seconds = date.getSeconds();
+                let hours24 = hours+":"+minutes+":"+seconds+" hrs";
+                let timeLabel = "am";
+                let hour12 = hours > 0?hours:12;
+                if(hours > 12){
+                    hour12 = hours-12;
+                    timeLabel = "pm";
+                }
+                let hours12 = hour12+":"+minutes+":"+seconds+" "+timeLabel;
                 
-            });
-            this.setState({message:""})
+                    this.socket.emit('SEND_MESSAGE', {
+                    username: this.props.username,
+                    message: message,
+                    hours12: hours12,
+                    hours24: hours24,
+                    userId: this.props.userId
+                    
+                });
+                this.setState({message:""})
+            }
         }
 
         let keyHandler = (event)=>{
