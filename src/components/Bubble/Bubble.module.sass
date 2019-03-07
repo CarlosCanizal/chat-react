@@ -1,9 +1,10 @@
 .AvatarContainer
     &.left
         float: left
+        margin-right: 10px
     &.right
         float: right
-        margin-left: 20px
+        margin-left: 10px
 .Bubble
     display: inline-block
     max-width: 70%
@@ -61,4 +62,12 @@
   content: ""
   clear: both
   display: table
+
+@media only screen and (max-width: 450px)
+    .AvatarContainer
+        &.left
+            margin-right: 10px
+        &.right
+            float: right
+            margin-left: 10px
     
