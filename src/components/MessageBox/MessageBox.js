@@ -61,12 +61,17 @@ class MessageBox extends Component{
 
         let themeClass = [styles.SendButton]
         themeClass.push(styles[this.props.theme])
+        
+        let messageClass = [styles.MessageBox]
+        messageClass.push(styles[this.props.theme])
 
-
+        let textareaClass = []
+        textareaClass.push(styles[this.props.theme])
         return(
             <div>
-                <div className={styles.MessageBox}>
+                <div className={messageClass.join(' ')}>
                     <textarea 
+                        className={textareaClass.join(' ')}
                         onKeyDown={keyHandler} 
                         placeholder={this.props.labels.messagePlaceholder} 
                         autoFocus={true} 
