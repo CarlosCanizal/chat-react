@@ -6,6 +6,7 @@ import { faPaperPlane, faComments, faSlidersH } from '@fortawesome/free-solid-sv
 import { connect } from 'react-redux';
 import styles from './App.module.sass';
 import io from "socket.io-client";
+import * as actionTypes from './store/actions';
 
 library.add(faPaperPlane)
 library.add(faComments)
@@ -49,8 +50,8 @@ const mapStateToProps = state =>{
 
 const mapDispatchToProps = dispatch=>{
   return {
-    onReceiveMessage : (payload)=> dispatch({type: 'RECEIVE_MESSAGE', payload:payload}),
-    onReceiveError : (message)=> dispatch({type: 'RECEIVE_ERROR', message:message})
+    onReceiveMessage : (payload)=> dispatch({type: actionTypes.RECEIVE_MESSAGE, payload:payload}),
+    onReceiveError : (message)=> dispatch({type: actionTypes.RECEIVE_ERROR, message:message})
   };
 };
 export default connect(mapStateToProps,mapDispatchToProps)(App);

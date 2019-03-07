@@ -4,6 +4,7 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
+import * as actionTypes from '../../store/actions';
 import styles from '../Settings/Settings.module.sass'
 
 class ThemeSelector extends Component{
@@ -49,7 +50,7 @@ const mapStateToProps = state =>{
   
 const mapDispatchToProps = dispatch=>{
     return {
-        onChangeTheme : (theme)=> dispatch({type: 'CHANGE_THEME', theme:theme})
+        onChangeTheme : (theme)=> dispatch({type: actionTypes.CHANGE_THEME, theme:theme})
     };
 };
   

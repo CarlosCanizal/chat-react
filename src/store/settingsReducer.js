@@ -1,3 +1,4 @@
+import * as actionTypes from './actions';
 const userId = localStorage.getItem('userId')?localStorage.getItem('userId'):Math.random().toString(36).slice(-5);
 localStorage.setItem('userId',userId);
 
@@ -28,56 +29,51 @@ const initialState = {
 }
 
 const reducer = (state=initialState, action)=>{
-    if (action.type === 'CHANGE_THEME'){
-        localStorage.setItem('theme',action.theme);
-        return {
-            ...state,
-            theme: action.theme
-        }
+    switch(action.type){
+        case actionTypes.CHANGE_THEME:
+            localStorage.setItem('theme',action.theme);
+            return {
+                ...state,
+                theme: action.theme
+            }
+        case actionTypes.CHANGE_CLOCK:
+            localStorage.setItem('timeFormat',action.timeFormat);
+            return {
+                ...state,
+                timeFormat: action.timeFormat
+            }
+        case actionTypes.CHANGE_LANGUAGE:
+            localStorage.setItem('language',action.language);
+            return {
+                ...state,
+                language: action.language
+            }
+        case actionTypes.CHANGE_CTRL_SEND:
+            localStorage.setItem('ctrlSend',action.ctrlSend);
+            return {
+                ...state,
+                ctrlSend: action.ctrlSend
+            }
+        case actionTypes.RESET_SETTINGS:
+            localStorage.clear();
+            return {
+                ...defaultSettings
+            }
+        case actionTypes.CHANGE_USERNAME:
+            localStorage.setItem('username',action.username);
+            return {
+                ...state,
+                username: action.username
+            }
+        case actionTypes.CHANGE_AVATAR:
+            localStorage.setItem('avatar',action.avatar);
+            return {
+                ...state,
+                avatar: action.avatar
+            }
+        default:
+            return state
     }
-    else if (action.type === 'CHANGE_CLOCK'){
-        localStorage.setItem('timeFormat',action.timeFormat);
-        return {
-            ...state,
-            timeFormat: action.timeFormat
-        }
-    }
-    else if (action.type === 'CHANGE_LANGUAGE'){
-        localStorage.setItem('language',action.language);
-        return {
-            ...state,
-            language: action.language
-        }
-    }
-    else if (action.type === 'CHANGE_CTRL_SEND'){
-
-        localStorage.setItem('ctrlSend',action.ctrlSend);
-        return {
-            ...state,
-            ctrlSend: action.ctrlSend
-        }
-    }
-    else if (action.type === 'RESET_SETTINGS'){
-        localStorage.clear();
-        return {
-            ...defaultSettings
-        }
-    }
-    else if (action.type === 'CHANGE_USERNAME'){
-        localStorage.setItem('username',action.username);
-        return {
-            ...state,
-            username: action.username
-        }
-    }
-    else if (action.type === 'CHANGE_AVATAR'){
-        localStorage.setItem('avatar',action.avatar);
-        return {
-            ...state,
-            avatar: action.avatar
-        }
-    }
-    return state
 }
 
 export default reducer

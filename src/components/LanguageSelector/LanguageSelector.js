@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import styles from '../Settings/Settings.module.sass'
+import styles from '../Settings/Settings.module.sass';
+import * as actionTypes from '../../store/actions';
 
 
 class LanguageSelector extends Component{
@@ -51,7 +52,7 @@ const mapStateToProps = state =>{
   
 const mapDispatchToProps = dispatch=>{
     return {
-        onChangeLanguage : (language)=> dispatch({type: 'CHANGE_LANGUAGE', language:language})
+        onChangeLanguage : (language)=> dispatch({type: actionTypes.CHANGE_LANGUAGE, language:language})
     };
 };
 

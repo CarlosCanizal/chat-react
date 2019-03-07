@@ -4,7 +4,8 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
-import styles from '../Settings/Settings.module.sass'
+import * as actionTypes from '../../store/actions';
+import styles from '../Settings/Settings.module.sass';
 
 class SendSettings extends Component{
 
@@ -51,7 +52,7 @@ const mapStateToProps = state =>{
   
 const mapDispatchToProps = dispatch=>{
     return {
-        onChangeSendOption : (ctrlSend)=> dispatch({type: 'CHANGE_CTRL_SEND', ctrlSend:ctrlSend})
+        onChangeSendOption : (ctrlSend)=> dispatch({type: actionTypes.CHANGE_CTRL_SEND, ctrlSend:ctrlSend})
     };
 };
 

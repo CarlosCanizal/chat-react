@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styles from './AvatarSelector.module.sass';
 import Avatar from '../Avatar/Avatar'
+import * as actionTypes from '../../store/actions';
 
 class AvatarSelector extends Component{
     changeAvatarHandler = (avatar)=>{
@@ -34,7 +35,7 @@ const mapStateToProps = state =>{
   
 const mapDispatchToProps = dispatch=>{
     return {
-        onChangeAvatar : (avatar)=> dispatch({type: 'CHANGE_AVATAR', avatar:avatar})
+        onChangeAvatar : (avatar)=> dispatch({type: actionTypes.CHANGE_AVATAR, avatar:avatar})
     };
 };
 

@@ -4,7 +4,8 @@ import Footer from '../Footer/Footer';
 import MessageBox from '../MessageBox/MessageBox';
 import { connect } from 'react-redux';
 import Bubble from '../Bubble/Bubble';
-import styles from './Chat.module.sass'
+import styles from './Chat.module.sass';
+import * as actionTypes from '../../store/actions';
 
 class Chat extends Component {
   state ={
@@ -82,7 +83,7 @@ class Chat extends Component {
 
 const mapDispatchToProps = dispatch=>{
   return {
-      resetNotifications : ()=> dispatch({type: 'RESET_NOTIFICATIONS'})
+      resetNotifications : ()=> dispatch({type: actionTypes.RESET_NOTIFICATIONS})
   };
 };
 

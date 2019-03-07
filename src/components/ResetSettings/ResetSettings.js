@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import styles from './ResetSettings.module.sass'
+import styles from './ResetSettings.module.sass';
+import * as actionTypes from '../../store/actions';
+
 
 class ResetSettings extends Component{
     render(){
@@ -21,7 +23,7 @@ const mapStateToProps = state =>{
 
 const mapDispatchToProps = dispatch=>{
     return {
-        resetSettings : ()=> dispatch({type: 'RESET_SETTINGS'})
+        resetSettings : ()=> dispatch({type: actionTypes.RESET_SETTINGS})
     };
 };
 

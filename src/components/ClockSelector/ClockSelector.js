@@ -4,7 +4,8 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
-import styles from '../Settings/Settings.module.sass'
+import styles from '../Settings/Settings.module.sass';
+import * as actionTypes from '../../store/actions';
 
 
 class ClockSelector extends Component{
@@ -55,7 +56,7 @@ const mapStateToProps = state =>{
   
 const mapDispatchToProps = dispatch=>{
     return {
-        onChangeClock : (timeFormat)=> dispatch({type: 'CHANGE_CLOCK', timeFormat:timeFormat})
+        onChangeClock : (timeFormat)=> dispatch({type: actionTypes.CHANGE_CLOCK, timeFormat:timeFormat})
     };
 };
 

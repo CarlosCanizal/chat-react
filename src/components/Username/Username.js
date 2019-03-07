@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import TextField from '@material-ui/core/TextField';
-import styles from '../Settings/Settings.module.sass'
+import * as actionTypes from '../../store/actions';
+import styles from '../Settings/Settings.module.sass';
 
 class Username extends Component{
     render(){
@@ -44,7 +45,7 @@ const mapStateToProps = state =>{
   
 const mapDispatchToProps = dispatch=>{
     return {
-        onChangeUsername : (username)=> dispatch({type: 'CHANGE_USERNAME', username:username})
+        onChangeUsername : (username)=> dispatch({type: actionTypes.CHANGE_USERNAME, username:username})
     };
 };
 

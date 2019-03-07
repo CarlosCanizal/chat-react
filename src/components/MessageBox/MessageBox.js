@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import io from "socket.io-client";
-import styles from './MessageBox.module.sass'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import styles from './MessageBox.module.sass';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import * as actionTypes from '../../store/actions';
 
 class MessageBox extends Component{
     state= {
@@ -96,7 +97,7 @@ const mapStateToProps = state =>{
   
 const mapDispatchToProps = dispatch=>{
     return {
-        onChangeTheme : ()=> dispatch({type: 'CHANGE_THEME', theme:'dark'})
+        onChangeTheme : ()=> dispatch({type: actionTypes.CHANGE_THEME, theme:'dark'})
     };
 };
 
