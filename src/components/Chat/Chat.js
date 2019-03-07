@@ -11,18 +11,39 @@ class Chat extends Component {
     height: 0
   }
   componentDidUpdate(){
-    this.node.scrollTop = this.node.scrollHeight;
+    if(this.node.scrollHeight-this.node.clientHeight !== this.node.scrollTop){
+      this.node.scrollTop = this.node.scrollHeight;
+    }else{
+      this.resetNotifications();
+    }
+    
   }
 
   componentDidMount(){
-    this.setState({height:window.innerHeight-114})
+    this.updateHeight()
+    window.addEventListener("resize", this.updateHeight);
     this.node.addEventListener('scroll', this.reachBottom);
+  }
+
+  componentWillUnmount(){
+    this.node.removeEventListener('scroll', this.reachBottom);
+    window.removeEventListener('resize', this.updateHeight);
+  }
+
+  updateHeight = ()=>{
+    this.setState({height:window.innerHeight-114})
   }
 
   reachBottom = ()=>{
     if (this.node.scrollHeight-this.node.clientHeight === this.node.scrollTop){
-      this.props.resetNotifications()
+      this.resetNotifications()
     }
+  }
+
+  resetNotifications = ()=>{
+    setTimeout(()=>{
+      this.props.resetNotifications()
+    },1000);
   }
 
   render() {

@@ -8,6 +8,7 @@ import LanguageSelector from '../LanguageSelector/LanguageSelector';
 import SendSettings from '../SendSettings/SendSettings';
 import ResetSettings from '../ResetSettings/ResetSettings'
 import Username from '../Username/Username'
+import AvatarSelector from '../AvatarSelector/AvatarSelector'
 import styles from './Settings.module.sass'
 
 class Settings extends Component {
@@ -15,7 +16,15 @@ class Settings extends Component {
     height: 0
   }
   componentDidMount(){
+    this.updateHeight()
+    window.addEventListener("resize", this.updateHeight);
+  }
+
+  updateHeight = ()=>{
     this.setState({height:window.innerHeight-145})
+  }
+  componentWillUnmount(){
+    window.removeEventListener('resize', this.updateHeight);
   }
   render() {
     let themeClass = [styles.SettingsBox];
@@ -25,6 +34,7 @@ class Settings extends Component {
         <div>
             <BodyApp>
               <div style={{height:this.state.height}}  className={styles.SettingsBody}>
+                <AvatarSelector />
                 <Username />
                 <div className={themeClass.join(' ')}>
                   <ThemeSelector />
