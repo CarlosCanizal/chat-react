@@ -11,6 +11,11 @@ library.add(faPaperPlane)
 library.add(faComments)
 library.add(faSlidersH)
 class App extends Component {
+
+  componentWillUnmount(){
+    this.socket.off();
+  }
+
   componentDidMount(){
     this.socket = io('localhost:8080',{ transports : ['websocket'] });
     this.socket.on('RECEIVE_MESSAGE', (data)=>{

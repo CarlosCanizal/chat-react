@@ -15,7 +15,7 @@ class Chat extends Component {
   }
 
   componentDidMount(){
-    this.setState({height:window.innerHeight-116})
+    this.setState({height:window.innerHeight-114})
     this.node.addEventListener('scroll', this.reachBottom);
   }
 

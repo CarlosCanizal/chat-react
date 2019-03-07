@@ -11,6 +11,12 @@ import Username from '../Username/Username'
 import styles from './Settings.module.sass'
 
 class Settings extends Component {
+  state ={
+    height: 0
+  }
+  componentDidMount(){
+    this.setState({height:window.innerHeight-145})
+  }
   render() {
     let themeClass = [styles.SettingsBox];
     themeClass.push(styles[this.props.theme]);
@@ -18,7 +24,7 @@ class Settings extends Component {
     return (
         <div>
             <BodyApp>
-              <div className={styles.SettingsBody}>
+              <div style={{height:this.state.height}}  className={styles.SettingsBody}>
                 <Username />
                 <div className={themeClass.join(' ')}>
                   <ThemeSelector />
