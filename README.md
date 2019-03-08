@@ -1,4 +1,5 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Chat with React and Socket IO
+You can test it online [DEMO](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
