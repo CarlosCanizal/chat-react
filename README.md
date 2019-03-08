@@ -43,15 +43,15 @@ If server cannot connect you will get message below:
 
 ## Chat Features
 You can send messages with youtube links or images and will be embed.
+
 ![alt text](https://imgur.com/swbSg8U.png)
 
-
 ## Settings
-- **Select Avatar:**
-- **Select Nickname:**
-- **Select Language:**
-- **Select Hours Format:**
-- **Send Enter Options:**
+- Select Avatar
+- Select Nickname
+- Select Language
+- Select Hours Format
+- Send Enter Options
 
 ## Notifications
 If you receive a notification **Messages** tab will blink and shows number of unread messages unitl read them.
