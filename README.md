@@ -39,7 +39,7 @@ REACT_APP_IO_SERVER is an environment variable, you can pass any Socket IO Serve
 ## Error connecting Socket IO server
 If server cannot connect you will get message below:
 
-![alt text](https://i.imgur.com/udbOXDO.png)
+![alt text](https://imgur.com/UR0NfZi.png)
 
 ## Chat Features
 You can send messages with youtube links or images and will be embed.
