@@ -18,7 +18,8 @@ class App extends Component {
   }
 
   componentDidMount(){
-    this.socket = io('localhost:8080',{ transports : ['websocket'] });
+    
+    this.socket = io(this.props.socketIOServer,{ transports : ['websocket'] });
     this.socket.on('RECEIVE_MESSAGE', (data)=>{
       this.props.onReceiveMessage({message:data, userId:this.props.userId});
     });

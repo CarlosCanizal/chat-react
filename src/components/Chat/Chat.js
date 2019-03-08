@@ -54,6 +54,7 @@ class Chat extends Component {
       errorMessage = (
         <h4 className={styles.error}>
           {this.props.labels.errors[this.props.error]}
+          {this.props.socketIOServer}
         </h4>
       )
     }else{

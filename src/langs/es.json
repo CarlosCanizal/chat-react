@@ -28,6 +28,6 @@
     "resetSettings":"Reiniciar Configuración",
     "anonymous": "Anonimo",
     "errors":{
-        "connectionError":"Error intentando conectarse al servidor, verifica que el servidor se encuentre corriendo en el puerto 8080"
+        "connectionError":"Error intentando conectarse al servidor, verifica que el servidor se encuentre corriendo en el puerto 8080. Servidor: "
     }
 }

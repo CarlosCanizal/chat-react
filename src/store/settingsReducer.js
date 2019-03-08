@@ -1,4 +1,5 @@
 import * as actionTypes from './actions';
+let socketIOServer = process.env.REACT_APP_IO_SERVER?process.env.REACT_APP_IO_SERVER:'http://168.197.42.18:8080';
 const userId = localStorage.getItem('userId')?localStorage.getItem('userId'):Math.random().toString(36).slice(-5);
 localStorage.setItem('userId',userId);
 
@@ -9,8 +10,10 @@ const defaultSettings = {
     ctrlSend : 'off',
     username : 'guest-'+userId,
     avatar : 'avatar1',
-    userId: userId
+    userId: userId,
+    socketIOServer: socketIOServer
 }
+
 let theme = localStorage.getItem('theme')?localStorage.getItem('theme'):defaultSettings['theme'];
 let timeFormat = localStorage.getItem('timeFormat')?localStorage.getItem('timeFormat'):defaultSettings['timeFormat'];
 let language = localStorage.getItem('language')?localStorage.getItem('language'):defaultSettings['language'];
@@ -25,7 +28,8 @@ const initialState = {
     ctrlSend: ctrlSend,
     username: username,
     avatar : avatar,
-    userId: userId
+    userId: userId,
+    socketIOServer: socketIOServer
 }
 
 const reducer = (state=initialState, action)=>{
