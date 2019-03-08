@@ -55,6 +55,8 @@ You can send messages with youtube links or images and will be embed.
 - Select Hours Format
 - Send Enter Options
 
+![alt text](https://imgur.com/GzlBxwc.png)
+
 ## Notifications
 If you receive a notification **Messages** tab will blink and shows number of unread messages unitl read them.
 
