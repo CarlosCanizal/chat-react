@@ -40,3 +40,15 @@ REACT_APP_IO_SERVER is an environment variable, you can pass any Socket IO Serve
 If server cannot connect you will get message below:
 
 ![alt text](https://i.imgur.com/udbOXDO.png)
+
+## Settings
+- **Select Avatar:**
+- **Select Nickname:**
+- **Select Language:**
+- **Select Hours Format:**
+- **Send Enter Options:**
+
+## Notifications
+<p> If you receive a notification **Messages** tab will blink and shows number of unread messages unitl read them</p>
+![alt text](https://i.imgur.com/BR2VE2Y.png)
+## TODO
