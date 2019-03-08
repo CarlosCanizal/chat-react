@@ -41,6 +41,11 @@ If server cannot connect you will get message below:
 
 ![alt text](https://i.imgur.com/udbOXDO.png)
 
+## Chat Features
+You can send messages with youtube links or images and will be embed.
+![alt text](https://imgur.com/swbSg8U.png)
+
+
 ## Settings
 - **Select Avatar:**
 - **Select Nickname:**
@@ -49,7 +54,7 @@ If server cannot connect you will get message below:
 - **Send Enter Options:**
 
 ## Notifications
-If you receive a notification **Messages** tab will blink and shows number of unread messages unitl read them
+If you receive a notification **Messages** tab will blink and shows number of unread messages unitl read them.
 
 ![alt text](https://i.imgur.com/BR2VE2Y.png)
 
