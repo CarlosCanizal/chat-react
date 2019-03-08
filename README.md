@@ -18,7 +18,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 This will start the Chat App with default remote Socket IO server. 
 
 ## Run local Socket IO Server
-_By default Chat App is connected with a remote Socket IO server_
+_By default Chat App is connected with a remote Socket IO server._
 
 If you want to run local Socket IO Server please run first:
 
@@ -37,3 +37,4 @@ REACT_APP_IO_SERVER=localhost:8080 npm start
 REACT_APP_IO_SERVER is an environment variable, you can pass any Socket IO Server you prefer
 
 If server cannot connect you will get message below:
+![alt text](https://imgur.com/udbOXDO)
