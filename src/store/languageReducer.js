@@ -12,6 +12,7 @@ initialState['labels'] = labels;
 const reducer = (state=initialState, action)=>{
     switch(action.type){
         case actionTypes.CHANGE_LANGUAGE:
+            /*Loads new language*/
             let lang = action.language && state.languages.includes(action.language)?action.language:defaultLang;
             labels = require('../langs/'+lang+'.json')
             return {
@@ -19,6 +20,7 @@ const reducer = (state=initialState, action)=>{
                 labels: labels
             }
         case actionTypes.RESET_SETTINGS:
+            /*Loads default language*/
             labels = require('../langs/'+defaultLang+'.json')
             return {
                 ...state,
