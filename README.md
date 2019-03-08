@@ -36,5 +36,7 @@ REACT_APP_IO_SERVER=localhost:8080 npm start
 
 REACT_APP_IO_SERVER is an environment variable, you can pass any Socket IO Server you prefer
 
+## Error connecting Socket IO server
 If server cannot connect you will get message below:
+
 ![alt text](https://i.imgur.com/udbOXDO.png)
