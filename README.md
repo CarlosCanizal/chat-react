@@ -18,6 +18,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 This will start the Chat App with default remote Socket IO server. 
 
 ## Run local Socket IO Server
+_By default Chat App is connected with a remote Socket IO server_
 
 If you want to run local Socket IO Server please run first:
 
