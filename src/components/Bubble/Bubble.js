@@ -75,7 +75,7 @@ class Bubble extends Component{
                     <Avatar avatarName={this.props.message.avatar}  avatarSize='dynamic' />
                 </div>
                 <div className={classNames.join(" ")}>
-                    <div className={styles.username}>z
+                    <div className={styles.username}>
                         {this.props.message.username || this.props.labels.anonymous}:
                     </div>
                     {message}
