@@ -1,5 +1,7 @@
 # Chat with React and Socket IO
-You can test it online [DEMO](https://github.com/facebook/create-react-app).
+You can test it online **LIVE DEMO**
+
+[https://react-chat-app-demo.firebaseapp.com/settings](https://github.com/facebook/create-react-app).
 
 ## Installation
 
