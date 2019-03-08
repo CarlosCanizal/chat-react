@@ -49,7 +49,7 @@ If server cannot connect you will get message below:
 - **Send Enter Options:**
 
 ## Notifications
-<p> If you receive a notification **Messages** tab will blink and shows number of unread messages unitl read them</p>
+If you receive a notification **Messages** tab will blink and shows number of unread messages unitl read them
 
 ![alt text](https://i.imgur.com/BR2VE2Y.png)
 
