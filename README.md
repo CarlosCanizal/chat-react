@@ -23,7 +23,7 @@ _By default Chat App is connected with a remote Socket IO server._
 If you want to run local Socket IO Server please run first:
 
 ```sh
-node backend/app.js
+node server/server.js
 ```
 
 This will start the Socket IO server in port :8080
