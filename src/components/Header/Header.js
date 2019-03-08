@@ -10,9 +10,10 @@ import Avatar from '../Avatar/Avatar';
 class Header extends Component{
     render(){
         let themeClass = [styles.Header, styles.clearfix, styles[this.props.theme]];
-        
+        let blinkClass = ""
         let notifications = "";
         if(this.props.notifications > 0){
+            blinkClass = styles.Blink
             notifications=(
                 <Notification counter={this.props.notifications}/>
             )
@@ -22,7 +23,7 @@ class Header extends Component{
             <header className={themeClass.join(' ')}>
                 <Avatar avatarName={this.props.avatar} avatarSize='small'/>
                 <nav>
-                    <NavLink to="/messages" exact> 
+                    <NavLink to="/messages" className={blinkClass} exact> 
                         {notifications}
                         <FontAwesomeIcon icon="comments" />
                         {this.props.labels.messages}

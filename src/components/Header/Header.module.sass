@@ -47,3 +47,16 @@
   content: ""
   clear: both
   display: table
+
+.Blink
+  border-radius: 10px
+  border: solid 1px #ccc
+  background: #cb2d3e
+  background: linear-gradient(to right, #cb2d3e, #ef473a);
+  animation: blinker 3s linear infinite;
+
+@keyframes blinker
+  50%
+    opacity: 0.5
+  100%
+    opacity: 1
