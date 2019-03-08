@@ -50,5 +50,7 @@ If server cannot connect you will get message below:
 
 ## Notifications
 <p> If you receive a notification **Messages** tab will blink and shows number of unread messages unitl read them</p>
+
 ![alt text](https://i.imgur.com/BR2VE2Y.png)
+
 ## TODO
