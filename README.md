@@ -1,7 +1,7 @@
 # Chat with React and Socket IO
 You can test it online **LIVE DEMO**
 
-[https://react-chat-app-demo.firebaseapp.com](https://react-chat-app-demo.firebaseapp.com/).
+[https://react-chat-app-demo.firebaseapp.com](https://react-chat-app-demo.firebaseapp.com/){:target="_blank"}..
 
 ## Installation
 
@@ -15,7 +15,7 @@ In the project directory, run command:
 
 ### `npm start`
 
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3000](http://localhost:3000){:target="_blank"} to view it in the browser.
 
 This will start the Chat App with default remote Socket IO server. 
 
