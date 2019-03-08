@@ -1,13 +1,20 @@
 html, :root
+    --lightMain: #7F7FD5
+    --lightAccent: #86A8E7
+    --lightEnd: #91EAE4
+    --darkMain: #606c88
+    --darkAccent: #3f4c6b
     --appBorder: #eef2f3
-
-.active
-    font-weight: bold
+    --lightBackgroundStart: #C9D6FF
+    --lightBackgroundEnd: #E2E2E2
+    --darkBackgroundStart: #000000
+    --darktBackgroundEnd: #434343
+    --footerMain: #8e9eab
+    --footerAccent: #eef2f3
 
 .App
     overflow: auto
-    
     &.light
-        background: linear-gradient(to right, #C9D6FF, #E2E2E2);
+        background: linear-gradient(to right, var(--lightBackgroundStart), var(--lightBackgroundEnd))
     &.dark
-        background: linear-gradient(to right, #000000, #434343);
+        background: linear-gradient(to right, var(--darkBackgroundStart), var(--darktBackgroundEnd))

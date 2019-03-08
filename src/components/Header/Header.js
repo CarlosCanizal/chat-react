@@ -3,8 +3,7 @@ import { NavLink, withRouter  } from 'react-router-dom';
 import styles from './Header.module.sass';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Notification from '../Notification/Notification'
-import './Header.sass'
+import Notification from '../Notification/Notification';
 import Avatar from '../Avatar/Avatar';
 
 class Header extends Component{

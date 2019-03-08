@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import styles from './Avatar.module.sass';
 
 class Avatar extends Component{

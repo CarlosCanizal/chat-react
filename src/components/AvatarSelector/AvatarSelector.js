@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styles from './AvatarSelector.module.sass';
-import Avatar from '../Avatar/Avatar'
+import Avatar from '../Avatar/Avatar';
 import * as actionTypes from '../../store/actions';
 
 class AvatarSelector extends Component{

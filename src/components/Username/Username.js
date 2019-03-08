@@ -20,7 +20,7 @@ class Username extends Component{
                 className={themeClass.join(' ')}
                 id="outlined-full-width"
                 label={this.props.labels.username}
-                style={{ 'marginTop': 20 }}
+                style={{ 'marginTop': 20}}
                 placeholder={this.props.labels.placeholder}
                 helperText={this.props.labels.helper}
                 fullWidth

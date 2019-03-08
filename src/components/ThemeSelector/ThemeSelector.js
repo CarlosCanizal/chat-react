@@ -5,7 +5,7 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import * as actionTypes from '../../store/actions';
-import styles from '../Settings/Settings.module.sass'
+import styles from '../Settings/Settings.module.sass';
 
 class ThemeSelector extends Component{
     render(){
