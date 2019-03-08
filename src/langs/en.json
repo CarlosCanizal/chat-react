@@ -28,6 +28,6 @@
     "resetSettings":"Reset Settings",
     "anonymous": "Anonymous",
     "errors":{
-        "connectionError":"Error connecting to server, please verify socket.io server is runnig in port 8080. Server: "
+        "connectionError":"Error connecting to server, please verify socket.io server is runnig. Server: "
     }
 }
