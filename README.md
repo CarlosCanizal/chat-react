@@ -59,3 +59,5 @@ If you receive a notification **Messages** tab will blink and shows number of un
 ![alt text](https://i.imgur.com/BR2VE2Y.png)
 
 ## TODO
+- Convert links in message to anchors.
+- Other user is typing.
