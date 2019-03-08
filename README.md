@@ -65,3 +65,12 @@ If you receive a notification **Messages** tab will blink and shows number of un
 ## TODO
 - Convert links in message to anchors.
 - Other user is typing.
+- Verify styles and functionality for IE & Edge
+
+## Tested
+
+The app was tested in:
+
+- Chrome (Desktop & Mobile)
+- Safari (Desktop & Mobile)
+- Firefox
