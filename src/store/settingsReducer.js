@@ -1,5 +1,5 @@
 import * as actionTypes from './actions';
-let socketIOServer = process.env.REACT_APP_IO_SERVER?process.env.REACT_APP_IO_SERVER:'http://168.197.42.18:8080';
+let socketIOServer = process.env.REACT_APP_IO_SERVER?process.env.REACT_APP_IO_SERVER:'https://kiwienterprisecloud.com:8080';
 const userId = localStorage.getItem('userId')?localStorage.getItem('userId'):Math.random().toString(36).slice(-5);
 localStorage.setItem('userId',userId);
 
