@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import styles from './AvatarSelector.module.sass';
 import Avatar from '../Avatar/Avatar';
@@ -23,6 +24,11 @@ class AvatarSelector extends Component{
             </div>
         )
     }
+}
+
+AvatarSelector.propTypes = {
+    avatar: PropTypes.string.isRequired,
+    onChangeAvatar: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state =>{

@@ -1,5 +1,7 @@
 import React,{ Component } from 'react';
+import PropTypes from 'prop-types';
 import styles from './Notification.module.sass';
+import MessageBox from '../MessageBox/MessageBox';
 
 class Notification extends Component{
     render(){
@@ -9,6 +11,10 @@ class Notification extends Component{
             </div>
         )
     }
+}
+
+MessageBox.propTypes = {
+    counter: PropTypes.number
 }
 
 export default Notification

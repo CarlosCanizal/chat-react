@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
@@ -45,6 +46,16 @@ class ClockSelector extends Component{
         )
     }
 
+}
+
+ClockSelector.propTypes = {
+    theme: PropTypes.string.isRequired,
+    timeFormat: PropTypes.string.isRequired,
+    onChangeClock: PropTypes.func.isRequired,
+    labels : PropTypes.shape({
+        timeFormat: PropTypes.string.isRequired,
+        timeLabels: PropTypes.objectOf(PropTypes.string)
+    })
 }
 
 const mapStateToProps = state =>{

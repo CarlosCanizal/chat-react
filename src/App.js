@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {BrowserRouter} from 'react-router-dom';
 import Theme from './components/Theme/Theme';
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -41,6 +42,12 @@ class App extends Component {
       </BrowserRouter>
     );
   }
+}
+
+App.propTypes = {
+  socketIOServer: PropTypes.string.isRequired,
+  onReceiveMessage: PropTypes.func.isRequired,
+  onReceiveError: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state =>{

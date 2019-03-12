@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
@@ -41,6 +42,16 @@ class LanguageSelector extends Component{
         )
     }
 
+}
+
+LanguageSelector.propTypes ={
+    theme: PropTypes.string.isRequired,
+    language: PropTypes.string.isRequired,
+    onChangeLanguage: PropTypes.func.isRequired,
+    labels : PropTypes.shape({
+        selectLanguage: PropTypes.string.isRequired,
+        langLabels: PropTypes.objectOf(PropTypes.string)
+    })
 }
 
 const mapStateToProps = state =>{

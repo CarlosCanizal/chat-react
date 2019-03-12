@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styles from './Bubble.module.sass';
 import { connect } from 'react-redux';
 import Avatar from '../Avatar/Avatar';
@@ -86,6 +87,19 @@ class Bubble extends Component{
             </div>
         )
     }
+}
+
+Bubble.propTypes = {
+    userId: PropTypes.string.isRequired,
+    timeFormat: PropTypes.string.isRequired,
+    message : PropTypes.shape({
+        userId: PropTypes.string.isRequired,
+        message: PropTypes.string.isRequired,
+        avatar: PropTypes.string.isRequired,
+        username: PropTypes.string,
+        hours24: PropTypes.string,
+        hours12: PropTypes.string
+    })
 }
 
 const mapStateToProps = state =>{

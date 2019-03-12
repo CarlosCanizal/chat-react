@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styles from './Footer.module.sass';
 
 class Footer extends Component{
@@ -9,6 +10,10 @@ class Footer extends Component{
             </footer>
         )
     }
+}
+
+Footer.propTypes = {
+    children: PropTypes.node
 }
 
 export default Footer

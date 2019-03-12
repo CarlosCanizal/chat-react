@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
@@ -41,6 +42,16 @@ class SendSettings extends Component{
         )
     }
 
+}
+
+SendSettings.propTypes ={
+    theme: PropTypes.string.isRequired,
+    ctrlSend: PropTypes.string.isRequired,
+    onChangeSendOption: PropTypes.func.isRequired,
+    labels : PropTypes.shape({
+        sendSettings: PropTypes.string.isRequired,
+        sendEnter: PropTypes.objectOf(PropTypes.string)
+    })
 }
 
 const mapStateToProps = state =>{

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { NavLink, withRouter  } from 'react-router-dom';
 import styles from './Header.module.sass';
 import { connect } from 'react-redux';
@@ -35,6 +36,16 @@ class Header extends Component{
             </header>
         )
     }
+}
+
+Header.propTypes ={
+    theme: PropTypes.string.isRequired,
+    notifications: PropTypes.number,
+    avatar : PropTypes.string.isRequired,
+    labels : PropTypes.shape({
+        messages: PropTypes.string.isRequired,
+        config: PropTypes.string.isRequired
+    })
 }
 
 const mapStateToProps = state =>{

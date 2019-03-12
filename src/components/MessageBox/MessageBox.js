@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import io from "socket.io-client";
 import styles from './MessageBox.module.sass';
@@ -88,6 +89,20 @@ class MessageBox extends Component{
         )
     }
 }
+
+MessageBox.propTypes ={
+    socketIOServer: PropTypes.string.isRequired,
+    theme: PropTypes.string.isRequired,
+    userId: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
+    ctrlSend: PropTypes.string.isRequired,
+    onChangeTheme: PropTypes.func.isRequired,
+    labels : PropTypes.shape({
+        messagePlaceholder: PropTypes.string.isRequired
+    })
+}
+
 const mapStateToProps = state =>{
     return {
         ...state.settings,

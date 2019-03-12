@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import BodyApp from '../BodyApp/BodyApp';
 import Footer from '../Footer/Footer';
 import { connect } from 'react-redux';
@@ -50,6 +51,10 @@ class Settings extends Component {
         </div>
     );
   }
+}
+
+Settings.propTypes ={
+  theme: PropTypes.string.isRequired
 }
 
 const mapStateToProps = state =>{

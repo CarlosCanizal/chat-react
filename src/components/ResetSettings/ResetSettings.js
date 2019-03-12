@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import styles from './ResetSettings.module.sass';
 import * as actionTypes from '../../store/actions';
@@ -12,6 +13,13 @@ class ResetSettings extends Component{
             </div>
         )
     }
+}
+
+ResetSettings.propTypes ={
+    resetSettings: PropTypes.func.isRequired,
+    labels : PropTypes.shape({
+        resetSettings: PropTypes.string.isRequired
+    })
 }
 
 const mapStateToProps = state =>{

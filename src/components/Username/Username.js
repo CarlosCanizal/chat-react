@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import TextField from '@material-ui/core/TextField';
 import * as actionTypes from '../../store/actions';
@@ -35,6 +36,16 @@ class Username extends Component{
         )
     }
     
+}
+
+Username.propTypes ={
+    theme: PropTypes.string.isRequired,
+    username: PropTypes.string,
+    labels : PropTypes.shape({
+        username: PropTypes.string.isRequired,
+        placeholder: PropTypes.string.isRequired,
+        helper: PropTypes.string.isRequired
+    })
 }
 
 const mapStateToProps = state =>{

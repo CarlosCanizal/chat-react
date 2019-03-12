@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import BodyApp from '../BodyApp/BodyApp';
 import Footer from '../Footer/Footer';
 import MessageBox from '../MessageBox/MessageBox';
@@ -80,6 +81,18 @@ class Chat extends Component {
         </div>
     );
   }
+}
+
+Chat.propTypes ={
+  socketIOServer: PropTypes.string.isRequired,
+  theme: PropTypes.string.isRequired,
+  messages: PropTypes.arrayOf(
+    PropTypes.instanceOf(Object)
+  ),
+  resetNotifications: PropTypes.func.isRequired,
+  labels : PropTypes.shape({
+    errors: PropTypes.objectOf(PropTypes.string)
+  })
 }
 
 const mapDispatchToProps = dispatch=>{

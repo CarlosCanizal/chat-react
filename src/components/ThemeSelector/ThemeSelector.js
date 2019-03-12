@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
@@ -39,6 +40,14 @@ class ThemeSelector extends Component{
             </div>
         )
     }
+}
+
+ThemeSelector.propTypes ={
+    theme: PropTypes.string.isRequired,
+    onChangeTheme: PropTypes.func.isRequired,
+    labels : PropTypes.shape({
+        selectTheme: PropTypes.string.isRequired
+    })
 }
 
 const mapStateToProps = state =>{
